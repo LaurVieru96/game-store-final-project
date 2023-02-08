@@ -13,10 +13,6 @@ function App() {
         {/* <Route path="contact" element={<Contact />} /> */}
         {/* <Route path="*" element={<NoPage />} /> */}
       </Routes>
-      <h1>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi labore
-        reprehenderit distinctio, magni vitae exercitationem.
-      </h1>
     </BrowserRouter>
   );
 }
