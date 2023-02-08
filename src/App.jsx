@@ -1,12 +1,19 @@
 import "./App.css";
-import logo from "./assets/logo.png";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "./components/Login/Login";
+import Home from "./container/Home";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Lorem 15 asd asdasd</h1>
-      <img src={logo} alt="Logo" width={80} style={{ borderRadius: "25px" }} />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/*" element={<Home />} />
+        {/* <Route index element={<Home />} /> */}
+        <Route path="login" element={<Login />} />
+        {/* <Route path="contact" element={<Contact />} /> */}
+        {/* <Route path="*" element={<NoPage />} /> */}
+      </Routes>
+    </BrowserRouter>
   );
 }
 
