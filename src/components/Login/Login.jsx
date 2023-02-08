@@ -1,9 +1,9 @@
 import React from "react";
-import { GoogleOAuthProvider } from "@react-oauth/google";
-import { useNavigate } from "react-router-dom";
-import { FcGoogle } from "react-icons/fc";
+// import { GoogleOAuthProvider } from "@react-oauth/google";
+// import { useNavigate } from "react-router-dom";
+// import { FcGoogle } from "react-icons/fc";
 import trailer from "../../assets/trailer2.mp4";
-import logo from "../../assets/logo.png";
+// import logo from "../../assets/logo.png";
 
 import "./Login.css";
 
