@@ -1,13 +1,13 @@
 import React from "react";
-// import { GoogleOAuthProvider } from "@react-oauth/google";
 // import { useNavigate } from "react-router-dom";
-// import { FcGoogle } from "react-icons/fc";
-import trailer from "../../assets/trailer2.mp4";
-// import logo from "../../assets/logo.png";
-
+import trailer from "../../assets/trailer3.mp4";
+import logo from "../../assets/simplex2.png";
+import { GoogleLogin } from "@react-oauth/google";
 import "./Login.css";
+import { useNavigate } from "react-router";
 
 const Login = () => {
+  const navigate = useNavigate();
   return (
     <div className="box">
       <div className="for-video">
@@ -21,7 +21,24 @@ const Login = () => {
           className="video"
         />
       </div>
-      <div>{/*  min 45  */}</div>
+      <div className="centered">
+        <div className="logo-login">
+          <div>
+            <img src={logo} alt="logo" width={300} />
+          </div>
+          <div>
+            <GoogleLogin
+              onSuccess={(response) => {
+                localStorage.setItem("user", JSON.stringify(response));
+                navigate("/");
+              }}
+              onError={() => {
+                console.log("Login Failed");
+              }}
+            />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

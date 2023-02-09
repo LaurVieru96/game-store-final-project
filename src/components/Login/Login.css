@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 .box {
     position: relative;
     display: flex;
@@ -18,4 +22,30 @@
     width: 100vw;
     height: 100vh;
     object-fit: cover;
+}
+
+.centered {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.521);
+}
+
+.logo-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.693);
+    height: 50vh;
+    gap: 30px;
+    box-shadow: 1px 1px 10px white;
+    border-radius: 25px;
 }
