@@ -5,17 +5,19 @@ import Home from "./container/Home";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { useEffect } from "react";
 
-function App() {
-
+function App(props) {
   const navigate = useNavigate();
+
 
   useEffect(() => {
     let user = true;
     console.log(`test`)
 
+    console.log(props)
     if (user) {
       navigate('/login')
     }
+    // eslint-disable-next-line
   }, []);
 
 
