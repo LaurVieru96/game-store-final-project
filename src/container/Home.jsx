@@ -1,6 +1,7 @@
 import React from "react";
 import "./Home.css";
 import { auth } from "../service/config";
+import NavigationBar from "../components/NavigationBar/NavigationBar";
 
 const Home = ({ user }) => {
   // https://rapidapi.com/digiwalls/api/gamerpower/
@@ -19,13 +20,20 @@ const Home = ({ user }) => {
 
   return (
     <div className="home">
-      ' NAVBAR HERE '
-      <h1>
-        Hello,
-        <span>{user.displayName}</span>
-      </h1>
-      <img src={user.photoURL} alt="profile-pic" />
-      <button onClick={() => auth.signOut()}>Sign Out</button>
+      <NavigationBar user={user} />
+      <div className="bg">
+        <div className="home-second">
+          <h1>
+            Hello,
+            <br />
+            <i>
+              <span>{user.displayName}</span>
+            </i>
+          </h1>
+          <img src={user.photoURL} alt="profile-pic" />
+          <button onClick={() => auth.signOut()}>Sign Out</button>
+        </div>
+      </div>
     </div>
   );
 };

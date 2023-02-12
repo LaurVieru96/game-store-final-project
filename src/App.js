@@ -3,10 +3,11 @@ import { useState, useEffect } from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 // import { Navigate } from "react-router";
 import firebase from "./service/config";
-import Login from "./components/Login";
+import Login from "./components/Login/Login";
 import Home from "./container/Home";
-import SignInGoogle from "./components/SignIn/SignInGoogle";
-// import Menu from "./components/Menu";
+// import SignInGoogle from "./components/SignIn/SignInGoogle";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Store from "./components/Store/Store";
 
 function App() {
 
@@ -24,7 +25,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="login" element={<Login />} />
+        {/* <Route path="login" element={<Login />} /> */}
 
         <Route
           path="/"
@@ -32,14 +33,16 @@ function App() {
             user ? (
               <Home user={user} />
             ) :
-              <SignInGoogle>
-                <Login />
-              </SignInGoogle>
+              <Login />
           }
         />
         <Route
           path="Home"
           element={user ? <Home user={user} /> : <Login />}
+        />
+        <Route
+          path="Store"
+          element={user ? <Store user={user} /> : <Login />}
         />
       </Routes>
 

@@ -1,8 +1,59 @@
 .home {
     height: 100vh;
     width: 100vw;
-    background-image: radial-gradient(#674a36 0%, black 100%);
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    /* background-color: #1d2228ed; */
+    background-image: url(../assets/home-bg.jpg);
+    background-position: center;
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
+}
+
+.bg {
+    background-color: rgba(0, 0, 0, 0.828);
+    position: absolute;
+    top: 80px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.home-second {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    gap: 50px;
+}
+
+.home-second h1 {
+    color: #FB8122;
+    font-size: 55px;
+}
+
+.home-second h1 span {
+    text-transform: uppercase;
+    color: #e1E2E2;
+}
+
+.home-second img {
+    width: 200px;
+    border-radius: 50%;
+}
+
+.home-second button {
+    background-color: #fc8b33;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.home-second button:hover {
+    background-color: #fff;
+    color: #333;
 }
