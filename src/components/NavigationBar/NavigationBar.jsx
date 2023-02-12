@@ -1,8 +1,5 @@
 import React from "react";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
 import logo from "../../assets/logo3.png";
-import Container from "react-bootstrap/Container";
 import "./NavigationBar.css";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { IoWalletOutline } from "react-icons/io5";
@@ -24,7 +21,7 @@ const NavigationBar = ({ user }) => {
             <Link to="/store">Game Store</Link>
           </li>
           <li>
-            <Link to="/blog">Blog</Link>
+            <Link to="/blog">Streams</Link>
           </li>
           <li>
             <Link to="/support">Support</Link>

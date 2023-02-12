@@ -92,8 +92,20 @@
     color: #333;
 }
 
+.navigation-user button svg:hover {
+    scale: 1.6;
+    transition: all 0.5s ease-in-out;
+}
+
 .navigation-user img {
     border-radius: 50%;
+}
+
+.navigation-user img:hover {
+    scale: 1.1;
+    rotate: 360deg;
+    transition: all 1s ease-in-out;
+    cursor: pointer;
 }
 
 
