@@ -1,38 +1,51 @@
 import "./App.css";
-import { Routes, Route, useNavigate } from "react-router-dom";
-import Login from "./components/Login/Login";
+import { useState, useEffect } from "react";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+// import { Navigate } from "react-router";
+import firebase from "./service/config";
+import Login from "./components/Login";
 import Home from "./container/Home";
-import { GoogleOAuthProvider } from "@react-oauth/google";
-import { useEffect } from "react";
+import SignInGoogle from "./components/SignIn/SignInGoogle";
+// import Menu from "./components/Menu";
 
-function App(props) {
-  const navigate = useNavigate();
+function App() {
+
+  const [user, setUser] = useState(null);
 
 
   useEffect(() => {
-    let user = true;
-    console.log(`test`)
-
-    console.log(props)
-    if (user) {
-      navigate('/login')
-    }
-    // eslint-disable-next-line
+    firebase.auth().onAuthStateChanged((user) => {
+      console.log(user)
+      setUser(user);
+    });
   }, []);
 
 
   return (
-    <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_API_TOKEN}>
-
+    <BrowserRouter>
       <Routes>
         <Route path="login" element={<Login />} />
-        {/* <Route index element={<Home />} /> */}
-        <Route path="/*" element={<Home />} />
-        {/* <Route path="contact" element={<Contact />} /> */}
-        {/* <Route path="*" element={<NoPage />} /> */}
+
+        <Route
+          path="/"
+          element={
+            user ? (
+              <Home user={user} />
+            ) :
+              <SignInGoogle>
+                <Login />
+              </SignInGoogle>
+          }
+        />
+        <Route
+          path="Home"
+          element={user ? <Home user={user} /> : <Login />}
+        />
       </Routes>
-    </GoogleOAuthProvider>
+
+    </BrowserRouter>
   );
 }
 
 export default App;
+
