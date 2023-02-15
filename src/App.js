@@ -1,18 +1,16 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-// import { Navigate } from "react-router";
 import firebase from "./service/config";
 import Login from "./components/Login/Login";
-import Home from "./container/Home";
-// import SignInGoogle from "./components/SignIn/SignInGoogle";
+import Home from "./components/container/Home.jsx";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Store from "./components/Store/Store";
+import Streams from "./components/Streams/Streams";
 
 function App() {
 
   const [user, setUser] = useState(null);
-
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
@@ -21,12 +19,9 @@ function App() {
     });
   }, []);
 
-
   return (
     <BrowserRouter>
       <Routes>
-        {/* <Route path="login" element={<Login />} /> */}
-
         <Route
           path="/"
           element={
@@ -44,8 +39,11 @@ function App() {
           path="Store"
           element={user ? <Store user={user} /> : <Login />}
         />
+        <Route
+          path="Streams"
+          element={user ? <Streams user={user} /> : <Login />}
+        />
       </Routes>
-
     </BrowserRouter>
   );
 }

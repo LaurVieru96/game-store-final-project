@@ -1,0 +1,42 @@
+.social-media-container {
+    background-color: #1D2228;
+    margin: 20px;
+    padding: 17px;
+    color: #E1E2E2;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.social-media-container>a {
+    font-size: 22px;
+    color: #fc8b33;
+    text-decoration: none;
+    padding: 6px;
+    text-align: center;
+}
+
+.social-media-container>a svg {
+    animation: social-media 1.5s infinite;
+}
+
+.social-media-container>a:hover {
+    color: #E1E2E2;
+    border-radius: 8px;
+    scale: 1;
+    transition: all 0.2s ease-in-out;
+}
+
+@keyframes social-media {
+    0% {
+        scale: 1;
+    }
+
+    50% {
+        scale: 1.2;
+    }
+
+    100% {
+        scale: 1;
+    }
+}

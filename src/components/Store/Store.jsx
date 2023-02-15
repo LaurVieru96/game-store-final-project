@@ -1,13 +1,26 @@
 import React from "react";
 import NavigationBar from "../NavigationBar/NavigationBar";
+import BannerCarousel from "./BannerCarousel/BannerCarousel";
+import GamesTable from "./GamesTable/GamesTable";
+import SocialMedia from "./SocialMedia/SocialMedia";
 import "./Store.css";
+import StoreFilter from "./StoreFilter/StoreFilter";
 
 const Store = ({ user }) => {
   return (
     <div>
       <NavigationBar user={user} />
-      <div className="store">
-        <h1>STORE</h1>
+      <div className="container">
+        <div className="row col-sm">
+          <div className="d-flex flex-column col-3 row-sm-12">
+            <StoreFilter />
+            <SocialMedia />
+          </div>
+          <div className="d-flex flex-column justify-content-center align-items-center col-9 row-sm-12">
+            <BannerCarousel />
+            <GamesTable />
+          </div>
+        </div>
       </div>
     </div>
   );

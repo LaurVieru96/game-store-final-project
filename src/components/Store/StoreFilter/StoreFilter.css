@@ -1,0 +1,19 @@
+.store-filter {
+    background-color: #1D2228;
+    margin: 20px;
+    padding: 17px;
+    color: #E1E2E2;
+    border-radius: 15px;
+}
+
+.store-cat {
+    margin-left: 15px;
+}
+
+.store-plat {
+    margin-left: 15px;
+}
+
+input[type=checkbox] {
+    accent-color: #fc8b33;
+}

@@ -1,0 +1,16 @@
+.colorbtn {
+    color: #fff;
+    background-color: #fc8b33;
+}
+
+.colorbtn:hover {
+    background-color: #1D2228;
+    color: #E1E2E2;
+}
+
+
+.col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
