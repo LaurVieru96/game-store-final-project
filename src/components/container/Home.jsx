@@ -1,6 +1,6 @@
 import React from "react";
 import "./Home.css";
-import { auth } from "../../service/config";
+import auth from "../../service/config";
 import NavigationBar from "../NavigationBar/NavigationBar";
 
 const Home = ({ user }) => {
