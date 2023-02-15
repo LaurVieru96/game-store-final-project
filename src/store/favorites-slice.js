@@ -5,14 +5,14 @@ const favoritesSlice = createSlice({
     name: 'favorites',
     initialState: {
         favoritesList: [],
-        showFavorites: false,
+        // showFavorites: false,
     },
     reducers: {
         addToFavorites(state, action) {
             const favoritesItems = action.payload;
             const existingItem = state.favoritesList.find((item) => item.id === favoritesItems.id);
             if (existingItem) {
-                console.log(`test`)
+                console.log(`test`);
             } else {
                 state.favoritesList.push({
                     id: favoritesItems.id,
