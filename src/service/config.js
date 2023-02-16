@@ -1,6 +1,4 @@
-
-
-import firebase from 'firebase/compat/app'
+import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import "firebase/compat/firestore"
 
@@ -26,6 +24,10 @@ export const signInWithGoogle = () => auth.signInWithPopup(provider);
 export default firebase;
 
 
+
+
+
+
 // import { initializeApp } from 'firebase/app';
 // import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 
@@ -47,3 +49,4 @@ export default firebase;
 // export const signInWithGoogle = () => signInWithPopup(auth, provider);
 
 // export default app;
+
