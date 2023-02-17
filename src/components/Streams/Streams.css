@@ -1,0 +1,71 @@
+.big-container-stream {
+    background: linear-gradient(to bottom, #1D2228, #fc8b33, #E1E2E2);
+}
+
+.container-stream {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.container-stream h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #E1E2E2;
+}
+
+.container-stream p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #E1E2E2;
+}
+
+
+.stream {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-gap: 20px;
+}
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    background-color: #1D2228;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 20px;
+    margin: 0 5px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.pagination button:hover {
+    background-color: #fc8b33;
+    color: #1D2228;
+}
+
+.pagination button.active {
+    background-color: #fc8b33;
+    color: #fff;
+}
+
+@media (max-width: 767px) {
+    .stream {
+        grid-template-columns: 1fr;
+    }
+
+    .container-stream p {
+        font-size: 12px;
+    }
+}

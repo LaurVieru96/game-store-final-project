@@ -111,7 +111,8 @@
 
 @media (max-width: 768px) {
     .navigation-nav {
-        display: none;
+        display: flex;
+        flex-direction: column;
     }
 
     .navigation-container {

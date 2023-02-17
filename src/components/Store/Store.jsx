@@ -8,7 +8,7 @@ import StoreFilter from "./StoreFilter/StoreFilter";
 
 const Store = ({ user }) => {
   return (
-    <div>
+    <div className="big-store-container">
       <NavigationBar user={user} />
       <div className="container">
         <div className="row col-sm">

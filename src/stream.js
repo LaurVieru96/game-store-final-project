@@ -1,0 +1,18 @@
+export const streamsX = [
+    "https://www.youtube.com/embed/wQlxN49jn6Y?autoplay=1&amp;start=75&mute=1",
+    "https://www.youtube.com/embed/KnpljMWwy3o?autoplay=1&amp;start=75&mute=1",
+    "https://www.youtube.com/embed/eEPG4TMhwtk?autoplay=1&amp;start=75&mute=1",
+    "https://www.youtube.com/embed/PagUxzzF_sE?autoplay=1&amp;start=75&mute=1",
+    "https://www.youtube.com/embed/ixllGOX0Evw?autoplay=1&mute=1",
+    "https://www.youtube.com/embed/wQlxN49jn6Y?autoplay=1&amp;start=75&mute=1",
+    "https://www.youtube.com/embed/GgapZNZmZC8?autoplay=1&mute=1",
+    "https://www.youtube.com/embed/aVkIzoDleOs?autoplay=1&mute=1",
+    "https://www.youtube.com/embed/KnpljMWwy3o?autoplay=1&amp;start=75&mute=1",
+    "https://www.youtube.com/embed/wQlxN49jn6Y?autoplay=1&amp;start=75&mute=1",
+    "https://www.youtube.com/embed/eEPG4TMhwtk?autoplay=1&amp;start=75&mute=1",
+    "https://www.youtube.com/embed/PagUxzzF_sE?autoplay=1&amp;start=75&mute=1",
+    "https://www.youtube.com/embed/ixllGOX0Evw?autoplay=1&mute=1",
+    "https://www.youtube.com/embed/wQlxN49jn6Y?autoplay=1&amp;start=75&mute=1",
+    "https://www.youtube.com/embed/GgapZNZmZC8?autoplay=1&mute=1",
+    "https://www.youtube.com/embed/aVkIzoDleOs?autoplay=1&mute=1",
+];
