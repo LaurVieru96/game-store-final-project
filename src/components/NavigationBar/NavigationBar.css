@@ -108,6 +108,10 @@
     cursor: pointer;
 }
 
+.active-underline {
+    border-bottom: 1px solid white;
+}
+
 
 @media (max-width: 768px) {
     .navigation-nav {

@@ -41,18 +41,49 @@ const NavigationBar = ({ user }) => {
       <div className="navigation-nav">
         <ul>
           <li>
-            <Link to="/home">Home</Link>
+            <Link
+              to="/home"
+              className={
+                window.location.pathname === "/home" ? "active-underline" : ""
+              }
+            >
+              Home
+            </Link>
           </li>
           <li>
-            <Link style={{ color: "#FB8122" }} to="/store">
+            <Link
+              style={{ color: "#FB8122" }}
+              to="/store"
+              className={
+                window.location.pathname === "/store" ? "active-underline" : ""
+              }
+            >
               Store
             </Link>
           </li>
           <li>
-            <Link to="/streams">Streams</Link>
+            <Link
+              to="/streams"
+              className={
+                window.location.pathname === "/streams"
+                  ? "active-underline"
+                  : ""
+              }
+            >
+              Streams
+            </Link>
           </li>
           <li>
-            <Link to="/support">Support</Link>
+            <Link
+              to="/support"
+              className={
+                window.location.pathname === "/support"
+                  ? "active-underline"
+                  : ""
+              }
+            >
+              Support
+            </Link>
           </li>
         </ul>
       </div>

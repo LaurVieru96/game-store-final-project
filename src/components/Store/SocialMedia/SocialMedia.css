@@ -30,13 +30,16 @@
 @keyframes social-media {
     0% {
         scale: 1;
+        color: #fc8b33;
     }
 
     50% {
         scale: 1.2;
+        color: #E1E2E2;
     }
 
     100% {
         scale: 1;
+        color: #fc8b33;
     }
 }
