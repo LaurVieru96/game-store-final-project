@@ -45,7 +45,7 @@ const NavigationBar = ({ user }) => {
           </li>
           <li>
             <Link style={{ color: "#FB8122" }} to="/store">
-              Game Store
+              Store
             </Link>
           </li>
           <li>

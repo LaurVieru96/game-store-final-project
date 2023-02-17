@@ -1,5 +1,6 @@
 .big-container-stream {
     background: linear-gradient(to bottom, #1D2228, #fc8b33, #E1E2E2);
+    height: 100vh;
 }
 
 .container-stream {
