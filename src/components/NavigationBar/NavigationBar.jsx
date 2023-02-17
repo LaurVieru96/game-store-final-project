@@ -43,9 +43,9 @@ const NavigationBar = ({ user }) => {
           <li>
             <Link
               to="/home"
-              className={
-                window.location.pathname === "/home" ? "active-underline" : ""
-              }
+              className={`underline ${
+                window.location.pathname === "/home" ? "active" : ""
+              }`}
             >
               Home
             </Link>
@@ -54,9 +54,9 @@ const NavigationBar = ({ user }) => {
             <Link
               style={{ color: "#FB8122" }}
               to="/store"
-              className={
-                window.location.pathname === "/store" ? "active-underline" : ""
-              }
+              className={`underline ${
+                window.location.pathname === "/store" ? "active" : ""
+              }`}
             >
               Store
             </Link>
@@ -64,11 +64,9 @@ const NavigationBar = ({ user }) => {
           <li>
             <Link
               to="/streams"
-              className={
-                window.location.pathname === "/streams"
-                  ? "active-underline"
-                  : ""
-              }
+              className={`underline ${
+                window.location.pathname === "/streams" ? "active" : ""
+              }`}
             >
               Streams
             </Link>
@@ -76,11 +74,9 @@ const NavigationBar = ({ user }) => {
           <li>
             <Link
               to="/support"
-              className={
-                window.location.pathname === "/support"
-                  ? "active-underline"
-                  : ""
-              }
+              className={`underline ${
+                window.location.pathname === "/support" ? "active" : ""
+              }`}
             >
               Support
             </Link>

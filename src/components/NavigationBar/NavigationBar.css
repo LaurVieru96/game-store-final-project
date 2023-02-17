@@ -108,9 +108,30 @@
     cursor: pointer;
 }
 
-.active-underline {
-    border-bottom: 1px solid white;
+.underline {
+    position: relative;
+    text-decoration: none;
+    color: #FB8122;
 }
+
+.underline::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background-color: #FB8122;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1s ease-out;
+}
+
+.underline.active::before,
+.underline:hover::before {
+    transform: scaleX(1);
+}
+
 
 
 @media (max-width: 768px) {
