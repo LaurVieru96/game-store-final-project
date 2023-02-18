@@ -6,6 +6,8 @@ const cartSlice = createSlice({
     initialState: {
         cartList: []
     },
+    // TODO:
+    // FIXME:
     reducers: {
         addToCart(state, action) {
             const cartItems = action.payload;
