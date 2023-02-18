@@ -141,7 +141,7 @@ const NavigationBar = ({ user }) => {
                   })}
                 </ul>
               ) : (
-                <p>No games have been added to favorites</p>
+                <p>No games have been added to favorites.</p>
               )}
             </div>
           </Modal.Body>

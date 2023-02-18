@@ -19,6 +19,11 @@ const Game = ({ game }) => {
     );
   };
 
+  const buyHandler = (e) => {
+    e.preventDefault();
+    console.log(`test`);
+  };
+
   return (
     <div className="col" style={{ padding: "12px" }} key={game.id}>
       <Card style={{ width: "18rem", margin: "5px" }}>
@@ -36,7 +41,7 @@ const Game = ({ game }) => {
           <ListGroup.Item>Users : {game.users} joined players</ListGroup.Item>
         </ListGroup>
         <Card.Body className="buttons">
-          <Card.Link className="btn colorbtn" href="#">
+          <Card.Link onClick={buyHandler} className="btn colorbtn" href="#">
             Buy Now
           </Card.Link>
           <Card.Link onClick={clickHandler} className="btn colorbtn" href="#">

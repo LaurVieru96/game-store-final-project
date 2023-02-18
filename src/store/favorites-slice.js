@@ -12,7 +12,7 @@ const favoritesSlice = createSlice({
             const favoritesItems = action.payload;
             const existingItem = state.favoritesList.find((item) => item.id === favoritesItems.id);
             if (existingItem) {
-                console.log(`test`);
+                console.log(`Added item successfully !`);
             } else {
                 state.favoritesList.push({
                     id: favoritesItems.id,
