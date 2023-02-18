@@ -23,11 +23,13 @@ const favoritesSlice = createSlice({
         },
         removeFromFavorites(state, action) {
             const id = action.payload;
-            const existingItem = state.favoritesList.find((item) => item.id === id);
-            if (!existingItem) {
-                console.log(`test` + id)
+            console.log(id)
+            const index = state.favoritesList.findIndex((item) => item.id === id);
+            console.log(index)
+            if (index !== -1) {
+                state.favoritesList.splice(index, 1);
             }
-        }
+        },
     }
 })
 

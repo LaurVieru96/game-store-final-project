@@ -26,9 +26,8 @@ const NavigationBar = ({ user }) => {
 
   const favoritesItems = useSelector((state) => state.favorites.favoritesList);
   console.log(favoritesItems);
-
-  const removeItem = () => {
-    dispatch(favoritesActions.removeFromFavorites(favoritesItems.id));
+  const removeItem = (id) => {
+    dispatch(favoritesActions.removeFromFavorites(id));
   };
 
   return (
@@ -122,24 +121,28 @@ const NavigationBar = ({ user }) => {
           </Modal.Header>
           <Modal.Body>
             <div>
-              <ul className="myBgColor list-group">
-                {favoritesItems.map((item) => {
-                  return (
-                    <li
-                      className="d-flex justify-content-between myColor list-group-item"
-                      key={item.id}
-                    >
-                      {item.title} - {item.price}
-                      <button
-                        onClick={removeItem}
-                        className="btn myBtn btn-warning"
+              {favoritesItems.length > 0 ? (
+                <ul className="myBgColor list-group">
+                  {favoritesItems.map((item) => {
+                    return (
+                      <li
+                        className="d-flex justify-content-between myColor list-group-item"
+                        key={item.id}
                       >
-                        x
-                      </button>
-                    </li>
-                  );
-                })}
-              </ul>
+                        {item.title} - {item.price}
+                        <button
+                          onClick={() => removeItem(item.id)}
+                          className="btn myBtn btn-warning"
+                        >
+                          x
+                        </button>
+                      </li>
+                    );
+                  })}
+                </ul>
+              ) : (
+                <p>No games have been added to favorites</p>
+              )}
             </div>
           </Modal.Body>
           <Modal.Footer>
