@@ -5,6 +5,7 @@ import ReadMore from "../ReadMore/ReadMore";
 import "./Game.css";
 import { favoritesActions } from "../../../../store/favorites-slice";
 import { useDispatch } from "react-redux";
+import { cartActions } from "../../../../store/cart-Slice";
 const Game = ({ game }) => {
   const dispatch = useDispatch();
 
@@ -23,7 +24,14 @@ const Game = ({ game }) => {
 
   const buyHandler = (e) => {
     e.preventDefault();
-    console.log(`test`);
+    dispatch(
+      cartActions.addToCart({
+        id: game.id,
+        title: game.title,
+        image: game.image,
+        price: game.worth,
+      })
+    );
   };
 
   return (

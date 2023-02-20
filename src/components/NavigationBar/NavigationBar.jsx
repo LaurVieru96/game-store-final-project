@@ -11,9 +11,11 @@ import Modal from "react-bootstrap/Modal";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { favoritesActions } from "../../store/favorites-slice";
+import { cartActions } from "../../store/cart-Slice";
 
 const NavigationBar = ({ user }) => {
   const dispatch = useDispatch();
+
   const [show, setShow] = useState(false);
 
   const closeWallet = () => setShow(false);
@@ -24,10 +26,24 @@ const NavigationBar = ({ user }) => {
   const closeFav = () => setShowF(false);
   const showFav = () => setShowF(true);
 
+  const [showC, setShowC] = useState(false);
+
+  const closeCart = () => setShowC(false);
+  const showCart = () => setShowC(true);
+
   const favoritesItems = useSelector((state) => state.favorites.favoritesList);
+
   console.log(favoritesItems);
+
   const removeItem = (id) => {
     dispatch(favoritesActions.removeFromFavorites(id));
+  };
+
+  const cartItems = useSelector((state) => state.cart.cartList);
+  console.log(cartItems);
+
+  const removeFromCart = (id) => {
+    dispatch(cartActions.removeFromCart(id));
   };
 
   return (
@@ -83,9 +99,56 @@ const NavigationBar = ({ user }) => {
         </ul>
       </div>
       <div className="navigation-user">
-        <button>
+        <button onClick={showCart}>
           <AiOutlineShoppingCart />
         </button>
+        <Modal show={showC} onHide={closeCart}>
+          <Modal.Header>
+            <Modal.Title style={{ color: "#fc8b33" }}>Cart</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <div>
+              {cartItems.length > 0 ? (
+                <ul className="myBgColor list-group">
+                  {cartItems.map((item) => {
+                    return (
+                      <li
+                        className="d-flex justify-content-between myColor list-group-item"
+                        key={item.id}
+                      >
+                        <img
+                          src={item.image}
+                          alt="asd"
+                          width={200}
+                          style={{ marginRight: "15px" }}
+                        />
+                        {item.title}
+                        <br />
+                        {item.price}
+                        <button
+                          onClick={() => removeFromCart(item.id)}
+                          className="btn myBtn btn-warning"
+                        >
+                          x
+                        </button>
+                      </li>
+                    );
+                  })}
+                </ul>
+              ) : (
+                <p>No games have been added to your cart.</p>
+              )}
+            </div>
+          </Modal.Body>
+          <Modal.Footer>
+            <Modal.Title style={{ color: "#fc8b33" }}>
+              Cart and payment.
+            </Modal.Title>
+            <Button style={{ backgroundColor: "#fc8b33", border: "none" }}>
+              Simplex
+            </Button>
+          </Modal.Footer>
+        </Modal>
 
         <button onClick={showWallet}>
           <IoWalletOutline />
@@ -94,9 +157,7 @@ const NavigationBar = ({ user }) => {
           <Modal.Header>
             <Modal.Title style={{ color: "#FB8122" }}>Your wallet</Modal.Title>
           </Modal.Header>
-          <Modal.Body style={{ color: "#FB8122" }}>
-            Account ballance: $1.276,93
-          </Modal.Body>
+          <Modal.Body>Account ballance: $1.276,93</Modal.Body>
           <Modal.Footer>
             <Button
               style={{ backgroundColor: "#fc8b33" }}
@@ -112,7 +173,6 @@ const NavigationBar = ({ user }) => {
         <button onClick={showFav}>
           <MdFavoriteBorder />
         </button>
-
         <Modal show={showF} onHide={closeFav}>
           <Modal.Header>
             <Modal.Title style={{ color: "#fc8b33" }}>

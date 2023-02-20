@@ -13,13 +13,21 @@ const cartSlice = createSlice({
             const cartItems = action.payload;
             const existingItem = state.cartList.find((item) => item.id === cartItems.id);
             if (existingItem) {
-                console.log(`Added item successfully !`);
+                console.log(`Game already in your cart !`)
             } else {
-                state.existingItem.push({
-                    id: existingItem.id,
-                    title: existingItem.title,
-                    price: existingItem.price
+                state.cartList.push({
+                    id: cartItems.id,
+                    title: cartItems.title,
+                    image: cartItems.image,
+                    price: cartItems.price
                 })
+            }
+        },
+        removeFromCart(state, action) {
+            const id = action.payload;
+            const index = state.cartList.findIndex((item) => item.id === id);
+            if (index !== -1) {
+                state.cartList.splice(index, 1);
             }
         }
     }
