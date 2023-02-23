@@ -20,6 +20,7 @@
 
 .navigation-logo img {
     border-radius: 8px;
+
 }
 
 .navigation-nav {
@@ -159,6 +160,19 @@
 
     .navigation-logo {
         margin-bottom: 10px;
+    }
+
+    .navigation-logo img {
+        width: 120px;
+        height: 40px;
+    }
+
+    .profile-pic-navbar {
+        display: none;
+    }
+
+    .navigation-nav li a {
+        margin: 0 10px;
     }
 }
 

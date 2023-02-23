@@ -53,6 +53,7 @@ const NavigationBar = ({ user }) => {
           <img src={logo} width="170" height="50" alt="Logo-Website" />
         </Link>
       </div>
+
       <div className="navigation-nav">
         <ul>
           <li>
@@ -230,6 +231,7 @@ const NavigationBar = ({ user }) => {
           width="50"
           height="50"
           alt="Profile"
+          className="profile-pic-navbar"
         />
       </div>
     </div>
