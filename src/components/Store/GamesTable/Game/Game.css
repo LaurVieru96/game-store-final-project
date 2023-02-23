@@ -14,3 +14,48 @@
     justify-content: center;
     align-items: center;
 }
+
+
+.game-individual-card {
+    width: 18rem;
+    margin: 5px;
+}
+
+
+@media (max-width: 768px) {
+    .game-individual-card {
+        width: 9rem;
+    }
+
+    .game-individual-title {
+        font-size: 1rem;
+    }
+
+    .game-individual-text {
+        font-size: 60px;
+    }
+
+    .list-group-flush {
+        font-size: 0.8rem;
+    }
+
+    .colorbtn {
+        font-size: 0.7rem;
+        font-weight: 700;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 5px;
+
+        padding: 0;
+        text-align: center;
+    }
+
+    .favorites-btn {
+        margin-left: 0 !important;
+    }
+}

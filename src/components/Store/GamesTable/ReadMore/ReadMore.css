@@ -7,3 +7,11 @@
      color: #fc8b33;
      cursor: pointer;
  }
+
+
+
+ @media (max-width: 768px) {
+     .text {
+         font-size: 0.8rem;
+     }
+ }

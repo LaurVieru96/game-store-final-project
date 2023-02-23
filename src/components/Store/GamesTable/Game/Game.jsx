@@ -34,12 +34,16 @@ const Game = ({ game }) => {
 
   return (
     <div className="col" style={{ padding: "12px" }} key={game.id}>
-      <Card style={{ width: "18rem", margin: "5px" }}>
+      <Card className="game-individual-card">
         <Card.Img variant="top" src={game.thumbnail} />
         <Card.Body>
-          <Card.Title>{game.title}</Card.Title>
+          <Card.Title className="game-individual-title">
+            {game.title}
+          </Card.Title>
           <Card.Text>
-            <ReadMore>{game.description}</ReadMore>
+            <ReadMore className="game-individual-text">
+              {game.description}
+            </ReadMore>
           </Card.Text>
         </Card.Body>
         <ListGroup className="list-group-flush">
@@ -52,7 +56,11 @@ const Game = ({ game }) => {
           <Card.Link onClick={buyHandler} className="btn colorbtn" href="#">
             Buy Now
           </Card.Link>
-          <Card.Link onClick={clickHandler} className="btn colorbtn" href="#">
+          <Card.Link
+            onClick={clickHandler}
+            className="btn colorbtn favorites-btn"
+            href="#"
+          >
             Add to Favorites
           </Card.Link>
         </Card.Body>
