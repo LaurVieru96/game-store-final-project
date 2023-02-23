@@ -42,6 +42,20 @@ const NavigationBar = ({ user }) => {
   const cartItems = useSelector((state) => state.cart.cartList);
   console.log(cartItems);
 
+  // const price = "$4.99";
+  // const number = parseFloat(price.replace("$", "")); // numar = 4.99
+
+  const calculateTotal = () => {
+    let total = 0;
+    for (let item of cartItems) {
+      const price = parseFloat(item.price.replace("$", ""));
+      total += price;
+    }
+    return total.toFixed(2);
+  };
+
+  const totalPrice = calculateTotal();
+
   const removeFromCart = (id) => {
     dispatch(cartActions.removeFromCart(id));
   };
@@ -144,12 +158,15 @@ const NavigationBar = ({ user }) => {
                   )}
                 </div>
               </Modal.Body>
+              <Modal.Body style={{ color: "#fc8b33" }}>
+                Total Price: <b>$ {totalPrice}</b>
+              </Modal.Body>
+              <Modal.Body style={{ color: "#fc8b33" }}>
+                Cart and payment.
+              </Modal.Body>
               <Modal.Footer>
-                <Modal.Title style={{ color: "#fc8b33" }}>
-                  Cart and payment.
-                </Modal.Title>
                 <Button style={{ backgroundColor: "#fc8b33", border: "none" }}>
-                  Simplex
+                  Checkout
                 </Button>
               </Modal.Footer>
             </Modal>
