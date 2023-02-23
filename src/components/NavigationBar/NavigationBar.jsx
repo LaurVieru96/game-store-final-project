@@ -98,124 +98,131 @@ const NavigationBar = ({ user }) => {
           </li>
         </ul>
       </div>
+
       <div className="navigation-user">
-        <button onClick={showCart}>
-          <AiOutlineShoppingCart />
-        </button>
-        <Modal show={showC} onHide={closeCart}>
-          <Modal.Header>
-            <Modal.Title style={{ color: "#fc8b33" }}>Cart</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <div>
-              {cartItems.length > 0 ? (
-                <ul className="myBgColor list-group">
-                  {cartItems.map((item) => {
-                    return (
-                      <li
-                        className="d-flex justify-content-between myColor list-group-item"
-                        key={item.id}
-                      >
-                        <img
-                          src={item.image}
-                          alt="asd"
-                          width={200}
-                          style={{ marginRight: "15px" }}
-                        />
-                        {item.title}
-                        <br />
-                        {item.price}
-                        <button
-                          onClick={() => removeFromCart(item.id)}
-                          className="btn myBtn btn-warning"
-                        >
-                          x
-                        </button>
-                      </li>
-                    );
-                  })}
-                </ul>
-              ) : (
-                <p>No games have been added to your cart.</p>
-              )}
-            </div>
-          </Modal.Body>
-          <Modal.Footer>
-            <Modal.Title style={{ color: "#fc8b33" }}>
-              Cart and payment.
-            </Modal.Title>
-            <Button style={{ backgroundColor: "#fc8b33", border: "none" }}>
-              Simplex
-            </Button>
-          </Modal.Footer>
-        </Modal>
+        {window.location.pathname === "/store" && (
+          <>
+            <button onClick={showCart}>
+              <AiOutlineShoppingCart />
+            </button>
+            <Modal show={showC} onHide={closeCart}>
+              <Modal.Header>
+                <Modal.Title style={{ color: "#fc8b33" }}>Cart</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <div>
+                  {cartItems.length > 0 ? (
+                    <ul className="myBgColor list-group">
+                      {cartItems.map((item) => {
+                        return (
+                          <li
+                            className="d-flex justify-content-between myColor list-group-item"
+                            key={item.id}
+                          >
+                            <img
+                              src={item.image}
+                              alt="asd"
+                              width={200}
+                              style={{ marginRight: "15px" }}
+                            />
+                            {item.title}
+                            <br />
+                            {item.price}
+                            <button
+                              onClick={() => removeFromCart(item.id)}
+                              className="btn myBtn btn-warning"
+                            >
+                              x
+                            </button>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  ) : (
+                    <p>No games have been added to your cart.</p>
+                  )}
+                </div>
+              </Modal.Body>
+              <Modal.Footer>
+                <Modal.Title style={{ color: "#fc8b33" }}>
+                  Cart and payment.
+                </Modal.Title>
+                <Button style={{ backgroundColor: "#fc8b33", border: "none" }}>
+                  Simplex
+                </Button>
+              </Modal.Footer>
+            </Modal>
 
-        <button onClick={showWallet}>
-          <IoWalletOutline />
-        </button>
-        <Modal show={show} onHide={closeWallet}>
-          <Modal.Header>
-            <Modal.Title style={{ color: "#FB8122" }}>Your wallet</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>Account ballance: $1.276,93</Modal.Body>
-          <Modal.Footer>
-            <Button
-              style={{ backgroundColor: "#fc8b33" }}
-              className="text-light"
-              variant="warning"
-              onClick={closeWallet}
-            >
-              Close
-            </Button>
-          </Modal.Footer>
-        </Modal>
+            <button onClick={showWallet}>
+              <IoWalletOutline />
+            </button>
+            <Modal show={show} onHide={closeWallet}>
+              <Modal.Header>
+                <Modal.Title style={{ color: "#FB8122" }}>
+                  Your wallet
+                </Modal.Title>
+              </Modal.Header>
+              <Modal.Body>Account ballance: $1.276,93</Modal.Body>
+              <Modal.Footer>
+                <Button
+                  style={{ backgroundColor: "#fc8b33" }}
+                  className="text-light"
+                  variant="warning"
+                  onClick={closeWallet}
+                >
+                  Close
+                </Button>
+              </Modal.Footer>
+            </Modal>
 
-        <button onClick={showFav}>
-          <MdFavoriteBorder />
-        </button>
-        <Modal show={showF} onHide={closeFav}>
-          <Modal.Header>
-            <Modal.Title style={{ color: "#fc8b33" }}>
-              Favorites Games List
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <div>
-              {favoritesItems.length > 0 ? (
-                <ul className="myBgColor list-group">
-                  {favoritesItems.map((item) => {
-                    return (
-                      <li
-                        className="d-flex justify-content-between myColor list-group-item"
-                        key={item.id}
-                      >
-                        {item.title} - {item.price}
-                        <button
-                          onClick={() => removeItem(item.id)}
-                          className="btn myBtn btn-warning"
-                        >
-                          x
-                        </button>
-                      </li>
-                    );
-                  })}
-                </ul>
-              ) : (
-                <p>No games have been added to favorites.</p>
-              )}
-            </div>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button
-              style={{ backgroundColor: "#fc8b33" }}
-              className="text-light"
-              variant="warning"
-              onClick={closeFav}
-            >
-              Close
-            </Button>
-          </Modal.Footer>
-        </Modal>
+            <button onClick={showFav}>
+              <MdFavoriteBorder />
+            </button>
+            <Modal show={showF} onHide={closeFav}>
+              <Modal.Header>
+                <Modal.Title style={{ color: "#fc8b33" }}>
+                  Favorites Games List
+                </Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <div>
+                  {favoritesItems.length > 0 ? (
+                    <ul className="myBgColor list-group">
+                      {favoritesItems.map((item) => {
+                        return (
+                          <li
+                            className="d-flex justify-content-between myColor list-group-item"
+                            key={item.id}
+                          >
+                            {item.title} - {item.price}
+                            <button
+                              onClick={() => removeItem(item.id)}
+                              className="btn myBtn btn-warning"
+                            >
+                              x
+                            </button>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  ) : (
+                    <p>No games have been added to favorites.</p>
+                  )}
+                </div>
+              </Modal.Body>
+              <Modal.Footer>
+                <Button
+                  style={{ backgroundColor: "#fc8b33" }}
+                  className="text-light"
+                  variant="warning"
+                  onClick={closeFav}
+                >
+                  Close
+                </Button>
+              </Modal.Footer>
+            </Modal>
+          </>
+        )}
 
         <img
           style={{ color: "#fff" }}
