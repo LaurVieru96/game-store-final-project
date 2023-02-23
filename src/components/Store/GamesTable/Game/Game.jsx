@@ -19,8 +19,6 @@ const Game = ({ game }) => {
       })
     );
   };
-  // TODO:
-  // FIXME:
 
   const buyHandler = (e) => {
     e.preventDefault();

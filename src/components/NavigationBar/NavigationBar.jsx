@@ -217,7 +217,13 @@ const NavigationBar = ({ user }) => {
           </Modal.Footer>
         </Modal>
 
-        <img src={user.photoURL} width="50" height="50" alt="Profile-Pic" />
+        <img
+          style={{ color: "#fff" }}
+          src={user.photoURL}
+          width="50"
+          height="50"
+          alt="Profile"
+        />
       </div>
     </div>
   );

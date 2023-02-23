@@ -16,7 +16,7 @@ const Home = ({ user }) => {
               <span>{user.displayName}</span>
             </i>
           </h1>
-          <img src={user.photoURL} alt="profile-pic" />
+          <img style={{ color: "#fff" }} src={user.photoURL} alt="Profile" />
           <button onClick={() => auth.signOut()}>Sign Out</button>
         </div>
       </div>
