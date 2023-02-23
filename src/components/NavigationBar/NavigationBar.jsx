@@ -11,7 +11,7 @@ import Modal from "react-bootstrap/Modal";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { favoritesActions } from "../../store/favorites-slice";
-import { cartActions } from "../../store/cart-Slice";
+import { cartActions } from "../../store/cart-slice";
 
 const NavigationBar = ({ user }) => {
   const dispatch = useDispatch();

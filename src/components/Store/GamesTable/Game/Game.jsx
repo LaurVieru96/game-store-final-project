@@ -5,7 +5,7 @@ import ReadMore from "../ReadMore/ReadMore";
 import "./Game.css";
 import { favoritesActions } from "../../../../store/favorites-slice";
 import { useDispatch } from "react-redux";
-import { cartActions } from "../../../../store/cart-Slice";
+import { cartActions } from "../../../../store/cart-slice";
 const Game = ({ game }) => {
   const dispatch = useDispatch();
 

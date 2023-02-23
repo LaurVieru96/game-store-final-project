@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import firebase from "./service/config";
 import Login from "./components/Login/Login";
-import Home from "./components/container/Home.jsx";
+import Home from "./components/Home/Home.jsx";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Store from "./components/Store/Store";
 import Streams from "./components/Streams/Streams";
