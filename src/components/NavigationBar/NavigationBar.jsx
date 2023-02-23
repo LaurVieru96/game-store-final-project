@@ -211,6 +211,7 @@ const NavigationBar = ({ user }) => {
                           <li
                             className="d-flex justify-content-between myColor list-group-item"
                             key={item.id}
+                            style={{ border: "1px solid #fff" }}
                           >
                             {item.title} - {item.price}
                             <button

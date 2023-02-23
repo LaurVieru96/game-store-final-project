@@ -32,7 +32,7 @@ const GamesTable = () => {
         const filteredGames = res.filter((game) => game.worth !== "N/A");
         setGamesList(filteredGames);
         console.log(filteredGames);
-        // console.log(filteredGames[0].platforms.split(",")[0]);
+        console.log(filteredGames[0].platforms.split(",")[0]);
         // if (filteredGames[0].platforms.split(",").includes("PC")) {
         //   console.log(`success`);
         // }

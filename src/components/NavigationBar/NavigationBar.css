@@ -147,7 +147,7 @@
 
     .navigation-container {
         display: flex;
-        flex-direction: column;
+        /* flex-direction: column; */
         align-items: center;
     }
 
@@ -159,7 +159,8 @@
     }
 
     .navigation-logo {
-        margin-bottom: 10px;
+        display: none;
+
     }
 
     .navigation-logo img {
@@ -175,6 +176,7 @@
     .navigation-nav li a {
         margin: 0 10px;
     }
+
 }
 
 .myBgColor {

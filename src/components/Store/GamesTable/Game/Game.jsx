@@ -40,8 +40,8 @@ const Game = ({ game }) => {
           <Card.Title className="game-individual-title">
             {game.title}
           </Card.Title>
-          <Card.Text>
-            <ReadMore className="game-individual-text">
+          <Card.Text className="test">
+            <ReadMore className="game-individual-text ">
               {game.description}
             </ReadMore>
           </Card.Text>
@@ -50,7 +50,7 @@ const Game = ({ game }) => {
           <ListGroup.Item>Price : {game.worth}</ListGroup.Item>
           <ListGroup.Item>Platforms : {game.platforms}</ListGroup.Item>
           <ListGroup.Item>Type : {game.type}</ListGroup.Item>
-          <ListGroup.Item>Users : {game.users} joined players</ListGroup.Item>
+          {/* <ListGroup.Item>Users : {game.users} joined players</ListGroup.Item> */}
         </ListGroup>
         <Card.Body className="buttons">
           <Card.Link onClick={buyHandler} className="btn colorbtn" href="#">
