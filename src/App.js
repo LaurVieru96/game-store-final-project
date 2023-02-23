@@ -7,6 +7,7 @@ import Home from "./components/Home/Home.jsx";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Store from "./components/Store/Store";
 import Streams from "./components/Streams/Streams";
+import Support from "./components/Support/Support";
 
 function App() {
 
@@ -42,6 +43,10 @@ function App() {
         <Route
           path="Streams"
           element={user ? <Streams user={user} /> : <Login />}
+        />
+        <Route
+          path="Support"
+          element={user ? <Support user={user} /> : <Login />}
         />
       </Routes>
     </BrowserRouter>
