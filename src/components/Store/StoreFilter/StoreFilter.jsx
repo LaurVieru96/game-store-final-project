@@ -4,8 +4,6 @@ import "./StoreFilter.css";
 const StoreFilter = () => {
   const [platforms, setPlatforms] = useState([
     { id: "PC", name: "PC", isSelected: false },
-    // { id: "PlayStation 5", name: "PlayStation 5", isSelected: false },
-    // { id: "PlayStation 4", name: "PlayStation 4", isSelected: false },
     { id: "Xbox One", name: "Xbox One", isSelected: false },
     { id: "Xbox Series X|S", name: "Xbox Series X|S", isSelected: false },
     { id: "Steam", name: "Steam", isSelected: false },
