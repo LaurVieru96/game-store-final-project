@@ -43,3 +43,11 @@
         color: #fc8b33;
     }
 }
+
+
+@media (max-width: 768px) {
+    .social-media-container {
+        display: none;
+    }
+
+}

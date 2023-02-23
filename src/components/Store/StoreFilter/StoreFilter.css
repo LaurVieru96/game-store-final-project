@@ -17,3 +17,11 @@
 input[type=checkbox] {
     accent-color: #fc8b33;
 }
+
+
+@media (max-width: 768px) {
+    .store-filter {
+        display: none;
+    }
+
+}

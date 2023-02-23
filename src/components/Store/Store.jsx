@@ -12,11 +12,11 @@ const Store = ({ user }) => {
       <NavigationBar user={user} />
       <div className="container">
         <div className="row col-sm">
-          <div className="d-flex flex-column col-3 row-sm-12">
+          <div className="d-flex flex-column col-lg-3 row-sm-12">
             <StoreFilter />
             <SocialMedia />
           </div>
-          <div className="d-flex flex-column justify-content-center align-items-center col-9 row-sm-12">
+          <div className="d-flex flex-column justify-content-center align-items-center col-lg-9 row-sm-12">
             <BannerCarousel />
             <GamesTable />
           </div>
