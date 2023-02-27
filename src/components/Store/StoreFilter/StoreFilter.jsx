@@ -1,29 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./StoreFilter.css";
+import { useDispatch } from "react-redux";
+import { filterActions } from "../../../store/filter-slice";
 
 const StoreFilter = () => {
+  const dispatch = useDispatch();
+
   const [platforms, setPlatforms] = useState([
     { id: "PC", name: "PC", isSelected: false },
-    { id: "Xbox One", name: "Xbox One", isSelected: false },
-    { id: "Xbox Series X|S", name: "Xbox Series X|S", isSelected: false },
+    { id: "Xbox-One", name: "Xbox One", isSelected: false },
+    { id: "Xbox-Series-xs", name: "Xbox Series X|S", isSelected: false },
     { id: "Steam", name: "Steam", isSelected: false },
     { id: "DRM-Free", name: "DRM-Free", isSelected: false },
-    { id: "Itch.io", name: "Itch.io", isSelected: false },
-    { id: "Epic Games Store", name: "Epic Games Store", isSelected: false },
+    { id: "Itchio", name: "Itch-io", isSelected: false },
+    { id: "Epic-Games-Store", name: "Epic Games Store", isSelected: false },
     { id: "GOG", name: "GOG", isSelected: false },
   ]);
 
+  useEffect(() => {
+    console.log("Test actualizare componenta store filter", platforms);
+  }, [platforms]);
+
   const handlePlatformSelection = (event) => {
-    const updatedPlatforms = platforms.map((platform) => {
-      if (platform.id === event.target.id) {
-        console.log(event.target.id);
-        console.log(platform.id);
-        platform.isSelected = event.target.checked;
-      }
-      return platform;
-    });
+    const platformId = event.target.id;
+    const platformIndex = platforms.findIndex((p) => p.id === platformId);
+    const updatedPlatforms = [...platforms];
+    updatedPlatforms[platformIndex].isSelected = event.target.checked;
     setPlatforms(updatedPlatforms);
     console.log(updatedPlatforms);
+    const selectedPlatforms = updatedPlatforms
+      .filter((p) => p.isSelected)
+      .map((p) => p.id);
+    console.log(selectedPlatforms);
+    dispatch(filterActions.setPlatformFilter(selectedPlatforms));
   };
 
   return (

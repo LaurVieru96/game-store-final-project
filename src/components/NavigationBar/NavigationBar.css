@@ -216,3 +216,24 @@
     color: #e1e2e2 !important;
     border: none !important;
 }
+
+.checkout-btn {
+    color: #fff;
+    background-color: #fc8b33;
+    border: none,
+}
+
+.checkout-btn:hover {
+    background-color: #1D2228 !important;
+    color: #E1E2E2;
+}
+
+.checkout-btn-main {
+    text-decoration: none;
+    color: #fff;
+}
+
+.checkout-btn-main:hover {
+    text-decoration: none;
+    color: #E1E2E2;
+}

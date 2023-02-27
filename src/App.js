@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Store from "./components/Store/Store";
 import Streams from "./components/Streams/Streams";
 import Support from "./components/Support/Support";
+import Checkout from "./components/Checkout/Checkout";
 
 function App() {
 
@@ -47,6 +48,10 @@ function App() {
         <Route
           path="Support"
           element={user ? <Support user={user} /> : <Login />}
+        />
+        <Route
+          path="Checkout"
+          element={user ? <Checkout user={user} /> : <Login />}
         />
       </Routes>
     </BrowserRouter>

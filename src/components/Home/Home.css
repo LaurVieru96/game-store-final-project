@@ -33,7 +33,7 @@
 .home-second h1 {
     color: #FB8122;
     font-size: 55px;
-    text-align: center;
+    text-align: left;
 }
 
 .home-second h1 span {
@@ -66,6 +66,7 @@
 
     /* Styles for mobile devices */
     .home-second h1 {
+        text-align: left;
         font-size: 40px;
     }
 

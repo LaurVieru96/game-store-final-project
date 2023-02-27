@@ -165,8 +165,17 @@ const NavigationBar = ({ user }) => {
                 Cart and payment.
               </Modal.Body>
               <Modal.Footer>
-                <Button style={{ backgroundColor: "#fc8b33", border: "none" }}>
-                  Checkout
+                <Button
+                  className="checkout-btn"
+                  style={{
+                    backgroundColor: "#fc8b33",
+                    border: "none",
+                    color: "#fff",
+                  }}
+                >
+                  <Link className="checkout-btn-main" to="/checkout">
+                    Checkout
+                  </Link>
                 </Button>
               </Modal.Footer>
             </Modal>

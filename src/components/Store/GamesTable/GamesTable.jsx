@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Game from "./Game/Game";
+import { useSelector } from "react-redux";
 
 const options = {
   method: "GET",
@@ -12,15 +13,29 @@ const options = {
 const GamesTable = () => {
   const [gamesList, setGamesList] = useState([]);
 
-  // https://rapidapi.com/digiwalls/api/gamerpower/
+  const filterPlatform = useSelector((state) => state.filter.platform);
+  console.log(filterPlatform);
 
   const fetchData = async () => {
-    const response = await fetch(
-      "https://gamerpower.p.rapidapi.com/api/giveaways",
-      options
-    );
+    const platformFilters = filterPlatform
+      .map((item) => `platform=${item.toLowerCase()}`)
+      .join("");
+    console.log(filterPlatform);
+
+    const response =
+      filterPlatform === []
+        ? await fetch(
+            `https://gamerpower.p.rapidapi.com/api/giveaways?`,
+            options
+          )
+        : await fetch(
+            `https://gamerpower.p.rapidapi.com/api/giveaways?${platformFilters}`,
+            options
+          );
+    console.log(response);
+
     if (!response.ok) {
-      throw new Error("Data coud not be fetched!");
+      throw new Error("Data could not be fetched!");
     } else {
       return response.json();
     }
@@ -29,19 +44,17 @@ const GamesTable = () => {
   useEffect(() => {
     fetchData()
       .then((res) => {
+        console.log(res);
         const filteredGames = res.filter((game) => game.worth !== "N/A");
-        setGamesList(filteredGames);
         console.log(filteredGames);
-        console.log(filteredGames[0].platforms.split(",")[0]);
-        // if (filteredGames[0].platforms.split(",").includes("PC")) {
-        //   console.log(`success`);
-        // }
+        setGamesList(filteredGames);
+        // setGamesList(res);
       })
       .catch((e) => {
         console.log(e.message);
       });
     // eslint-disable-next-line
-  }, []);
+  }, [filterPlatform]);
 
   return (
     <div className="container">
