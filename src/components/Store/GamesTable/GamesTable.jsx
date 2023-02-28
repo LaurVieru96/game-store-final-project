@@ -14,26 +14,27 @@ const GamesTable = () => {
   const [gamesList, setGamesList] = useState([]);
   console.log(gamesList);
 
-  const [response, setResponse] = useState(null);
+  // const [response, setResponse] = useState(null);
 
   const filterPlatform = useSelector((state) => state.filter.platform);
   console.log(filterPlatform);
 
-
   const fetchAll = async () => {
-    const response = await fetch(`https://gamerpower.p.rapidapi.com/api/giveaways?`, options)
-    const res = await response.json()
-    
+    const response = await fetch(
+      `https://gamerpower.p.rapidapi.com/api/giveaways?`,
+      options
+    );
+    const res = await response.json();
+
     setGamesList(res.filter((game) => game.worth !== "N/A"));
-   
-  }
+  };
 
   const fetchData = async () => {
     const platformFilters = filterPlatform
       .map((item) => `platform=${item.toLowerCase()}`)
       .join("");
     console.log(filterPlatform);
-
+    console.log(`intra?`);
     const response =
       filterPlatform === []
         ? await fetch(
@@ -43,8 +44,8 @@ const GamesTable = () => {
         : await fetch(
             `https://gamerpower.p.rapidapi.com/api/giveaways?${platformFilters}`,
             options
-          )
-    );
+          );
+
     console.log(response);
 
     if (!response.ok) {
@@ -54,9 +55,8 @@ const GamesTable = () => {
     }
   };
   useEffect(() => {
-    fetchAll()
-
-  },[])
+    fetchAll();
+  }, []);
   useEffect(() => {
     fetchData()
       .then((res) => {
@@ -70,7 +70,7 @@ const GamesTable = () => {
         console.log(e.message);
       });
     // eslint-disable-next-line
-  }, []);
+  }, [filterPlatform]);
 
   return (
     <div className="container">
