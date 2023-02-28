@@ -1,3 +1,5 @@
 .checkout-container {
     margin-top: 80px;
+    background: linear-gradient(to bottom, #E1E2E2, #fc8b33, #1D2228);
+    min-height: 100vh;
 }

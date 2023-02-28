@@ -12,6 +12,9 @@ const options = {
 
 const GamesTable = () => {
   const [gamesList, setGamesList] = useState([]);
+  console.log(gamesList);
+
+  const [response, setResponse] = useState(null);
 
   const filterPlatform = useSelector((state) => state.filter.platform);
   console.log(filterPlatform);
@@ -22,7 +25,7 @@ const GamesTable = () => {
       .join("");
     console.log(filterPlatform);
 
-    const response =
+    setResponse(
       filterPlatform === []
         ? await fetch(
             `https://gamerpower.p.rapidapi.com/api/giveaways?`,
@@ -31,7 +34,8 @@ const GamesTable = () => {
         : await fetch(
             `https://gamerpower.p.rapidapi.com/api/giveaways?${platformFilters}`,
             options
-          );
+          )
+    );
     console.log(response);
 
     if (!response.ok) {
@@ -54,7 +58,7 @@ const GamesTable = () => {
         console.log(e.message);
       });
     // eslint-disable-next-line
-  }, [filterPlatform]);
+  }, []);
 
   return (
     <div className="container">
