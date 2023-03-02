@@ -85,11 +85,12 @@
     background-color: #fc8b33;
     border: none;
     color: #fff;
-    padding: 10px 20px;
+    padding: 10px 15px;
     font-size: 18px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     border-radius: 8px;
+    display: flex;
 }
 
 .navigation-user button:hover {
@@ -186,7 +187,7 @@
 
 /* width */
 ::-webkit-scrollbar {
-    width: 15px;
+    width: 10px;
 }
 
 /* Track */
@@ -197,8 +198,8 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #fc8b33;
-    border-radius: 5px;
+    background: #fc8a33c3;
+    border-radius: 4px;
 }
 
 
@@ -236,4 +237,11 @@
 .checkout-btn-main:hover {
     text-decoration: none;
     color: #E1E2E2;
+}
+
+
+.navbar-badge {
+    margin-left: 5px;
+    background-color: #fc8b33 !important;
+    color: #1D2228 !important;
 }

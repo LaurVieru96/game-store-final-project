@@ -13,23 +13,34 @@ import { useDispatch } from "react-redux";
 import { favoritesActions } from "../../store/favorites-slice";
 import { cartActions } from "../../store/cart-Slice";
 
+import Badge from "react-bootstrap/Badge";
+
 const NavigationBar = ({ user }) => {
   const dispatch = useDispatch();
 
   const [show, setShow] = useState(false);
 
   const closeWallet = () => setShow(false);
-  const showWallet = () => setShow(true);
+  const showWallet = () =>
+    setTimeout(() => {
+      setShow(true);
+    }, 300);
 
   const [showF, setShowF] = useState(false);
 
   const closeFav = () => setShowF(false);
-  const showFav = () => setShowF(true);
+  const showFav = () =>
+    setTimeout(() => {
+      setShowF(true);
+    }, 300);
 
   const [showC, setShowC] = useState(false);
 
   const closeCart = () => setShowC(false);
-  const showCart = () => setShowC(true);
+  const showCart = () =>
+    setTimeout(() => {
+      setShowC(true);
+    }, 300);
 
   const favoritesItems = useSelector((state) => state.favorites.favoritesList);
 
@@ -117,8 +128,11 @@ const NavigationBar = ({ user }) => {
       <div className="navigation-user">
         {window.location.pathname === "/store" && (
           <>
-            <button onClick={showCart}>
+            <button title="Cart" onClick={showCart}>
               <AiOutlineShoppingCart />
+              <Badge className="navbar-badge" bg="warning">
+                {cartItems.length}
+              </Badge>
             </button>
             <Modal show={showC} onHide={closeCart}>
               <Modal.Header>
@@ -180,8 +194,11 @@ const NavigationBar = ({ user }) => {
               </Modal.Footer>
             </Modal>
 
-            <button onClick={showWallet}>
+            <button title="Wallet" onClick={showWallet}>
               <IoWalletOutline />
+              <Badge className="navbar-badge" bg="warning">
+                $176,93
+              </Badge>
             </button>
             <Modal show={show} onHide={closeWallet}>
               <Modal.Header>
@@ -189,7 +206,7 @@ const NavigationBar = ({ user }) => {
                   Your wallet
                 </Modal.Title>
               </Modal.Header>
-              <Modal.Body>Account ballance: $1.276,93</Modal.Body>
+              <Modal.Body>Account ballance: $176,93</Modal.Body>
               <Modal.Footer>
                 <Button
                   style={{ backgroundColor: "#fc8b33" }}
@@ -202,8 +219,11 @@ const NavigationBar = ({ user }) => {
               </Modal.Footer>
             </Modal>
 
-            <button onClick={showFav}>
+            <button title="Favorites" onClick={showFav}>
               <MdFavoriteBorder />
+              <Badge className="navbar-badge" bg="warning">
+                {favoritesItems.length}
+              </Badge>
             </button>
             <Modal show={showF} onHide={closeFav}>
               <Modal.Header>

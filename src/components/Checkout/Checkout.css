@@ -3,3 +3,161 @@
     background: linear-gradient(to bottom, #E1E2E2, #fc8b33, #1D2228);
     min-height: 100vh;
 }
+
+.small-checkout-container {
+    padding: 20px;
+}
+
+.checkout-container h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #1D2228;
+}
+
+/* culoarea de fundal pentru întreaga pagină */
+body {
+    background-color: #e1e2e2;
+}
+
+/* culoarea de fundal pentru container */
+.wrapper-container {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #fc8b33;
+    border-radius: 5px;
+}
+
+/* stilurile pentru containerul din partea stângă */
+.left-panel-container {
+    width: 100%;
+}
+
+/* stilurile pentru containerul din partea dreaptă */
+.right-panel-container {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* stilurile pentru lista de produse */
+.product-info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.container-i-q-p {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+}
+
+.product-info h4 {
+    margin-left: 10px;
+}
+
+.product-quantity {
+    display: flex;
+    align-items: center;
+}
+
+.product-quantity button {
+    background-color: #fc8b33;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.product-price h5 {
+    color: #fc8b33;
+}
+
+/* stilurile pentru containerul de rezumat al comenzii */
+.order-summary-container {
+    background-color: #1d2228;
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.order-summary-container h4 {
+    margin-bottom: 10px;
+}
+
+.order-summary-container hr {
+    border-top: 1px solid #fff;
+    margin: 10px 0;
+}
+
+.order-summary-container p {
+    margin: 5px 0;
+}
+
+.order-summary-container small {
+    font-size: 12px;
+    margin-top: 10px;
+    display: block;
+}
+
+.order-summary-container button {
+    background-color: #fc8b33;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.checkout-colorbtn {
+    color: #fff;
+    background-color: #fc8b33;
+}
+
+.checkout-colorbtn:hover {
+    background-color: #1D2228;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.price-quantity {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* media queries pentru diferite dimensiuni de ecran */
+@media only screen and (min-width: 768px) {
+    .wrapper-container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .left-panel-container {
+        width: 60%;
+        margin-right: 20px;
+    }
+
+    .right-panel-container {
+        width: 40%;
+        margin-top: 0;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .wrapper-container {
+        margin: 40px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .wrapper-container {
+        margin: 60px;
+    }
+}

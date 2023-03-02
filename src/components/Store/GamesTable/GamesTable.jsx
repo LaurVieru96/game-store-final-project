@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Game from "./Game/Game";
 import { useSelector } from "react-redux";
 
+// import { motion } from "framer-motion";
+
 const options = {
   method: "GET",
   headers: {
@@ -14,10 +16,27 @@ const GamesTable = () => {
   const [gamesList, setGamesList] = useState([]);
   console.log(gamesList);
 
-  // const [response, setResponse] = useState(null);
-
   const filterPlatform = useSelector((state) => state.filter.platform);
   console.log(filterPlatform);
+
+  // SEARCH
+  const [name, setName] = useState([]);
+  const [find, setFind] = useState("");
+
+  const change = (event) => {
+    event.preventDefault();
+    setFind(event.target.value);
+  };
+
+  useEffect(() => {
+    setName(
+      gamesList.filter((e) =>
+        e.title.toLowerCase().includes(find.toLowerCase())
+      )
+    );
+    // eslint-disable-next-line
+  }, [find]);
+  // SEARCH
 
   const fetchAll = async () => {
     const response = await fetch(
@@ -33,8 +52,9 @@ const GamesTable = () => {
     const platformFilters = filterPlatform
       .map((item) => `platform=${item.toLowerCase()}`)
       .join("");
+
     console.log(filterPlatform);
-    console.log(`intra?`);
+
     const response =
       filterPlatform === []
         ? await fetch(
@@ -45,8 +65,6 @@ const GamesTable = () => {
             `https://gamerpower.p.rapidapi.com/api/giveaways?${platformFilters}`,
             options
           );
-
-    console.log(response);
 
     if (!response.ok) {
       throw new Error("Data could not be fetched!");
@@ -74,6 +92,17 @@ const GamesTable = () => {
 
   return (
     <div className="container">
+      {/* <input type="search" onChange={change} />
+      <ul>
+        {name.length > 0
+          ? name.map((e, i) => {
+              return <li key={i}>{e.title}</li>;
+            })
+          : gamesList.map((e, i) => {
+              console.log("afiseaza?");
+              return <li key={i}>{e.title}</li>;
+            })}
+      </ul> */}
       <div className="row">
         {gamesList.map((game) => {
           return <Game game={game} key={game.id} />;

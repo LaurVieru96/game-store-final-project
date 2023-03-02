@@ -18,4 +18,4 @@ const filterSlice = createSlice({
 
 
 export const filterActions = filterSlice.actions;
-export default filterSlice;
+export default filterSlice.reducer;

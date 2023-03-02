@@ -19,7 +19,8 @@ const cartSlice = createSlice({
                     id: cartItems.id,
                     title: cartItems.title,
                     image: cartItems.image,
-                    price: cartItems.price
+                    price: cartItems.price,
+                    totalQuantity: 1
                 })
             }
         },
@@ -29,7 +30,8 @@ const cartSlice = createSlice({
             if (index !== -1) {
                 state.cartList.splice(index, 1);
             }
-        }
+        },
+
     }
 })
 export const cartActions = cartSlice.actions;

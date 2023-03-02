@@ -7,7 +7,7 @@ const store = configureStore({
     reducer: {
         favorites: favoritesSlice.reducer,
         cart: cartSlice.reducer,
-        filter: filterSlice.reducer,
+        filter: filterSlice,
     }
 })
 
