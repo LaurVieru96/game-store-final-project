@@ -1,0 +1,132 @@
+.footer-container {
+    background-color: #E1E2E2;
+    color: black;
+}
+
+/* Desktop */
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.footer-payment,
+.footer-address,
+.footer-terms {
+    flex-basis: 30%;
+}
+
+.footer-payment {
+    display: flex;
+    align-items: center;
+}
+
+.footer-main-left-side {
+    flex-basis: 70%;
+}
+
+.payment-images {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.payment-images>* {
+    margin-right: 20px;
+}
+
+.footer-main-right-side {
+    display: flex;
+    align-items: center;
+}
+
+.footer-main-right-side p {
+    margin: 0;
+}
+
+.footer-main-right-side>img {
+    margin-right: 10px;
+}
+
+.footer-address {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-address-left {
+    flex-basis: 60%;
+}
+
+.footer-social-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-basis: 40%;
+}
+
+.footer-social-right>* {
+    margin-left: 20px;
+}
+
+.footer-terms {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+    .footer-container {
+        padding: 30px;
+    }
+
+    .footer-payment,
+    .footer-address,
+    .footer-terms {
+        flex-basis: 100%;
+        margin-bottom: 30px;
+    }
+
+    .footer-main-right-side {
+        justify-content: flex-end;
+    }
+
+    .footer-social-right {
+        justify-content: center;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+    .footer-container {
+        padding: 20px;
+    }
+
+    .footer-main-left-side {
+        flex-basis: 50%;
+    }
+
+    .payment-images {
+        flex-wrap: wrap;
+    }
+
+    .payment-images>* {
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .footer-main-right-side {
+        flex-basis: 50%;
+        justify-content: flex-end;
+    }
+
+    .footer-address-left {
+        flex-basis: 70%;
+    }
+
+    .footer-social-right {
+        flex-basis: 30%;
+        justify-content: center;
+    }
+}

@@ -5,6 +5,7 @@ import GamesTable from "./GamesTable/GamesTable";
 import SocialMedia from "./SocialMedia/SocialMedia";
 import "./Store.css";
 import StoreFilter from "./StoreFilter/StoreFilter";
+import Footer from "../Footer/Footer";
 
 const Store = ({ user }) => {
   return (
@@ -22,6 +23,7 @@ const Store = ({ user }) => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

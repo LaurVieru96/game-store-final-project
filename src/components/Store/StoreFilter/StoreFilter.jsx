@@ -26,9 +26,23 @@ const StoreFilter = () => {
     const platformIndex = platforms.findIndex((p) => p.id === platformId);
     const updatedPlatforms = [...platforms];
     updatedPlatforms[platformIndex].isSelected = event.target.checked;
-    setPlatforms(updatedPlatforms);
+
+    const newPlatforms = updatedPlatforms.map((p) => {
+      if (p.id !== platformId) {
+        return {
+          ...p,
+          isSelected: false,
+          // dezactivează elementele care nu sunt selectate
+          disabled: event.target.checked,
+        };
+      } else {
+        return p;
+      }
+    });
+
+    setPlatforms(newPlatforms);
     console.log(updatedPlatforms);
-    const selectedPlatforms = updatedPlatforms
+    const selectedPlatforms = newPlatforms
       .filter((p) => p.isSelected)
       .map((p) => p.id);
     console.log(selectedPlatforms);
@@ -48,6 +62,7 @@ const StoreFilter = () => {
                 name={platform.name}
                 onChange={handlePlatformSelection}
                 checked={platform.isSelected}
+                disabled={platform.disabled}
               />
               <label style={{ marginLeft: "10px" }} htmlFor={platform.id}>
                 {platform.name}

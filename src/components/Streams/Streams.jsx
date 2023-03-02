@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import NavigationBar from "../NavigationBar/NavigationBar";
 import "./Streams.css";
 import { streamsX } from "../../../src/stream";
+import Footer from "../Footer/Footer";
 
 const Streams = ({ user }) => {
   const pageSize = 4; // numărul de elemente afișate pe pagină
@@ -64,6 +65,7 @@ const Streams = ({ user }) => {
           })}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
