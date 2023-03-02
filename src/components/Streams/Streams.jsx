@@ -3,6 +3,7 @@ import NavigationBar from "../NavigationBar/NavigationBar";
 import "./Streams.css";
 import { streamsX } from "../../../src/stream";
 import Footer from "../Footer/Footer";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Streams = ({ user }) => {
   const pageSize = 6; // numărul de elemente afișate pe pagină
@@ -33,23 +34,25 @@ const Streams = ({ user }) => {
           get a sneak peek before making a purchase. Join our community of
           gamers and indulge in endless hours of entertainment!
         </p>
-        <div className="stream">
-          {currentStreams.map((stream, i) => {
-            return (
-              <iframe
-                key={i}
-                width="480"
-                height="270"
-                src={stream}
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                autoPlay="1"
-                allowFullScreen
-              ></iframe>
-            );
-          })}
-        </div>
+        <motion.div layout className="stream">
+          <AnimatePresence>
+            {currentStreams.map((stream, i) => {
+              return (
+                <iframe
+                  key={i}
+                  width="480"
+                  height="270"
+                  src={stream}
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  autoPlay="0"
+                  allowFullScreen
+                ></iframe>
+              );
+            })}
+          </AnimatePresence>
+        </motion.div>
         <div className="pagination">
           {Array.from(Array(totalPages).keys()).map((page) => {
             const pageNumber = page + 1;
