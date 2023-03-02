@@ -5,7 +5,7 @@ import { streamsX } from "../../../src/stream";
 import Footer from "../Footer/Footer";
 
 const Streams = ({ user }) => {
-  const pageSize = 4; // numărul de elemente afișate pe pagină
+  const pageSize = 6; // numărul de elemente afișate pe pagină
   const [currentPage, setCurrentPage] = useState(1); // pagina curentă
 
   const indexOfLastStream = currentPage * pageSize;

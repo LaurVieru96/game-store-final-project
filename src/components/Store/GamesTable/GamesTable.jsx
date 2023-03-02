@@ -20,22 +20,22 @@ const GamesTable = () => {
   console.log(filterPlatform);
 
   // SEARCH
-  const [name, setName] = useState([]);
-  const [find, setFind] = useState("");
+  // const [name, setName] = useState([]);
+  // const [find, setFind] = useState("");
 
-  const change = (event) => {
-    event.preventDefault();
-    setFind(event.target.value);
-  };
+  // const change = (event) => {
+  //   event.preventDefault();
+  //   setFind(event.target.value);
+  // };
 
-  useEffect(() => {
-    setName(
-      gamesList.filter((e) =>
-        e.title.toLowerCase().includes(find.toLowerCase())
-      )
-    );
-    // eslint-disable-next-line
-  }, [find]);
+  // useEffect(() => {
+  //   setName(
+  //     gamesList.filter((e) =>
+  //       e.title.toLowerCase().includes(find.toLowerCase())
+  //     )
+  //   );
+  //   // eslint-disable-next-line
+  // }, [find]);
   // SEARCH
 
   const fetchAll = async () => {

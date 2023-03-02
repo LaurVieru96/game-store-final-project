@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Checkout.css";
 import NavigationBar from "../NavigationBar/NavigationBar";
 import { useDispatch, useSelector } from "react-redux";
