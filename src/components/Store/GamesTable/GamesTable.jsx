@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Game from "./Game/Game";
 import { useSelector } from "react-redux";
 
-// import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const options = {
   method: "GET",
@@ -103,11 +103,13 @@ const GamesTable = () => {
               return <li key={i}>{e.title}</li>;
             })}
       </ul> */}
-      <div className="row">
-        {gamesList.map((game) => {
-          return <Game game={game} key={game.id} />;
-        })}
-      </div>
+      <motion.div layout className="row">
+        <AnimatePresence>
+          {gamesList.map((game) => {
+            return <Game game={game} key={game.id} />;
+          })}
+        </AnimatePresence>
+      </motion.div>
     </div>
   );
 };

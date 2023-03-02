@@ -3,9 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const filterSlice = createSlice({
     name: 'filter',
     initialState: {
-        filter: {
-            platform: [],
-        }
+        platform: [],
     },
     reducers: {
         setPlatformFilter(state, action) {

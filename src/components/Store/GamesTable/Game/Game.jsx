@@ -6,6 +6,7 @@ import "./Game.css";
 import { favoritesActions } from "../../../../store/favorites-slice";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../../../store/cart-Slice";
+import { motion } from "framer-motion";
 const Game = ({ game }) => {
   const dispatch = useDispatch();
 
@@ -33,7 +34,16 @@ const Game = ({ game }) => {
   };
 
   return (
-    <div className="col" style={{ padding: "12px" }} key={game.id}>
+    <motion.div
+      layout
+      animate={{ opacity: 1, scale: 1 }}
+      initial={{ opacity: 1, scale: 0 }}
+      exit={{ opacity: 0, scale: 0 }}
+      transition={{ duration: 0.5 }}
+      className="col"
+      style={{ padding: "12px" }}
+      key={game.id}
+    >
       <Card className="game-individual-card">
         <Card.Img variant="top" src={game.thumbnail} />
         <Card.Body>
@@ -65,7 +75,7 @@ const Game = ({ game }) => {
           </Card.Link>
         </Card.Body>
       </Card>
-    </div>
+    </motion.div>
   );
 };
 
