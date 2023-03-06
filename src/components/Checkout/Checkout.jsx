@@ -79,7 +79,9 @@ const Checkout = ({ user }) => {
                   <p>Order total: $ {totalPriceAfterTaxes}</p>
                   <p>Amount due: $ {totalPriceAfterTaxes}</p>
                   <small>*Before applicable taxes</small>
-                  <button className="checkout-colorbtn">Checkout now</button>
+                  <Link to="/finish-checkout">
+                    <button className="checkout-colorbtn">Checkout now</button>
+                  </Link>
                 </div>
               ) : (
                 ""

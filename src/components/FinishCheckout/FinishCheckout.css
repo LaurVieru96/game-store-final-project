@@ -1,0 +1,150 @@
+.finish-checkout-container {
+    margin-top: 80px;
+    background: linear-gradient(to bottom, #E1E2E2, #fc8b33, #1D2228);
+    min-height: 100vh;
+
+}
+
+
+.card-form-main {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    max-width: 400px;
+    padding: 24px;
+}
+
+.card-form-main label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.card-form-main input[type="text"],
+input[type="password"] {
+    background-color: #f8f8f8;
+    border: none;
+    border-radius: 4px;
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+    color: #333;
+    font-size: 16px;
+    padding: 12px;
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.card-form-main input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none;
+}
+
+.card-form-main input[type="submit"] {
+    background-color: #e68a00;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 24px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.card-form-main input[type="submit"]:hover {
+    background-color: #d97a00;
+}
+
+/* @media only screen and (min-width: 768px) {
+    form {
+        max-width: 500px;
+    }
+
+    input[type="text"] {
+        width: 50%;
+    }
+
+    label {
+        margin-top: 20px;
+    }
+} */
+
+
+.card-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkout-colorbtn {
+
+    background-color: #fc8b33;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.checkout-colorbtn:hover {
+    background-color: #1D2228;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+
+.card-main {
+    position: relative;
+    width: 400px;
+    height: 250px;
+    background-color: #1D2228;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    background-image: url(../../assets/VisaCard/map.png);
+    background-size: cover;
+    border-color: #fff;
+}
+
+.card__header {
+    position: relative;
+    height: 60px;
+    background-color: #ffffff00;
+}
+
+.card__logo {
+    width: 60px;
+    height: 60px;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Visa_2021_logo.svg/320px-Visa_2021_logo.svg.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+
+.card__body {
+    position: relative;
+    padding: 20px;
+    color: #fff;
+}
+
+.card__number {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.card__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card__name {
+    font-size: 18px;
+}
+
+.card__expiration-date,
+.card__cvv {
+    font-size: 14px;
+}

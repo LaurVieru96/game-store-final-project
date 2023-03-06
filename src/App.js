@@ -9,6 +9,7 @@ import Store from "./components/Store/Store";
 import Streams from "./components/Streams/Streams";
 import Support from "./components/Support/Support";
 import Checkout from "./components/Checkout/Checkout";
+import FinishCheckout from "./components/FinishCheckout/FinishCheckout";
 
 function App() {
 
@@ -52,6 +53,10 @@ function App() {
         <Route
           path="Checkout"
           element={user ? <Checkout user={user} /> : <Login />}
+        />
+        <Route
+          path="Finish-checkout"
+          element={user ? <FinishCheckout user={user} /> : <Login />}
         />
       </Routes>
     </BrowserRouter>
