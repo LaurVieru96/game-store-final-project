@@ -1,5 +1,82 @@
-.support-container {
+.support-main-container {
     margin-top: 80px;
     background: linear-gradient(to bottom, #E1E2E2, #fc8b33, #1D2228);
-    min-height: 100vh;
+    min-height: 100vh - 80px;
+}
+
+.support-container {
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+
+}
+
+.support-container h1 {
+    font-size: 2.3rem;
+    color: #1D2228;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.faq-section {
+    margin-top: 30px;
+}
+
+.faq-section h3 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.faq-section ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.faq-section ul li {
+    font-size: 1.2rem;
+    color: #1D2228;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    border-bottom: 1px solid grey;
+    border-color: #fc8b33;
+}
+
+.faq-section ul li:hover {
+    list-style-type: none;
+    cursor: pointer;
+}
+
+.faq-section ul li:hover::before {
+    content: "\2022";
+    /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: #fc8b33;
+    /* Change the color */
+    font-weight: bold;
+    /* If you want it to be bold */
+    display: inline-block;
+    /* Needed to add space between the bullet and the text */
+    width: 1em;
+    /* Also needed for space (tweak if needed) */
+    margin-left: -1em;
+    /* Also needed for space (tweak if needed) */
+}
+
+
+.header-section-support {
+    background-image: url(../../assets/Support/background.jpg);
+    background-size: cover;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ul-section-support {
+    margin-top: 55px;
 }

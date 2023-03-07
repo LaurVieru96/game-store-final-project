@@ -13,10 +13,13 @@ const Checkout = ({ user }) => {
   const cartItems = useSelector((state) => state.cart.cartList);
   const dispatch = useDispatch();
 
-  const increaseQuantity = () => {
-    dispatch(cartActions.addToCart());
+  const decreaseQuantity = (id) => {
+    dispatch(cartActions.removeQuantityFromCart(id));
   };
-  const decreaseQuantity = (id) => {};
+
+  const increaseQuantity = () => {
+    dispatch(cartActions.addingQuantityToCart());
+  };
 
   console.log(cartItems);
   const calculateTotal = () => {
@@ -41,7 +44,7 @@ const Checkout = ({ user }) => {
             <div className="left-panel-container">
               <Card>
                 <ListGroup variant="flush">
-                  {cartItems.map((individualCart, i) => (
+                  {cartItems.map((individualCart, i, id) => (
                     <ListGroup.Item key={i}>
                       <div className="container-i-q-p">
                         <div className="product-info">
@@ -50,9 +53,21 @@ const Checkout = ({ user }) => {
                         </div>
                         <div className="price-quantity">
                           <div className="product-quantity">
-                            <button onClick={decreaseQuantity}>-</button>
+                            <button
+                              onClick={() =>
+                                decreaseQuantity(individualCart.id)
+                              }
+                            >
+                              -
+                            </button>
                             <p>Quantity: {individualCart.totalQuantity}</p>
-                            <button onClick={increaseQuantity}>+</button>
+                            <button
+                              onClick={() =>
+                                increaseQuantity(individualCart.id)
+                              }
+                            >
+                              +
+                            </button>
                           </div>
                           <div className="product-price">
                             <h5>{individualCart.price}</h5>
