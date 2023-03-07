@@ -31,6 +31,9 @@ const cartSlice = createSlice({
                 state.cartList.splice(index, 1);
             }
         },
+        emptyEntireCart(state, action) {
+            state.cartList = [];
+        }
 
     }
 })

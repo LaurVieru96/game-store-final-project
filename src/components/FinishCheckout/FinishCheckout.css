@@ -22,6 +22,7 @@
     margin-bottom: 8px;
 }
 
+
 .card-form-main input[type="text"],
 input[type="password"] {
     background-color: #f8f8f8;
@@ -94,6 +95,24 @@ input[type="password"]:focus {
     border: 1px solid #fff;
 }
 
+.checkout-colorbtn:disabled {
+    background-color: #1D2228;
+}
+
+.checkout-colorbtn-goback {
+    background-color: #1D2228;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 2px solid #fff;
+    margin-top: 10px;
+}
+
+.checkout-colorbtn-goback:hover {
+    background-color: #fc8b33;
+    color: #fff;
+    border: 2px solid #fff;
+}
 
 .card-main {
     position: relative;
@@ -147,4 +166,81 @@ input[type="password"]:focus {
 .card__expiration-date,
 .card__cvv {
     font-size: 14px;
+}
+
+
+.order-amount {
+    background-color: #1d2228;
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.order-amount h4 {
+    margin-bottom: 10px;
+}
+
+.order-amount hr {
+    border-top: 1px solid #fff;
+    margin: 10px 0;
+}
+
+.order-amount p {
+    margin: 5px 0;
+}
+
+.order-amount small {
+    font-size: 12px;
+    margin-top: 10px;
+    display: block;
+}
+
+.order-amount button {
+    background-color: #fc8b33;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.left-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.wrapper-circle {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+.checkmark {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #1d2228;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #e1e2e2;
+}
+
+.checkmark:after {
+    content: "\2713";
+    font-size: 90px;
+    color: #fc8b33;
+    color: green;
+}
+
+.checkmark-p {
+    color: #fff;
+    text-align: center;
+    margin-top: 15px;
 }

@@ -188,7 +188,7 @@ const NavigationBar = ({ user }) => {
                   }}
                 >
                   <Link className="checkout-btn-main" to="/checkout">
-                    Checkout
+                    Proceed to Checkout
                   </Link>
                 </Button>
               </Modal.Footer>
