@@ -1,8 +1,12 @@
 .finish-checkout-container {
     margin-top: 80px;
     background: linear-gradient(to bottom, #E1E2E2, #fc8b33, #1D2228);
-    min-height: 100vh;
+    min-height: 100vh - 80px;
 
+}
+
+.finish-checkout-main-cont {
+    min-height: 65vh;
 }
 
 
@@ -219,8 +223,6 @@ input[type="password"]:focus {
     flex-direction: column;
 }
 
-
-
 .checkmark {
     width: 200px;
     height: 200px;
@@ -230,6 +232,10 @@ input[type="password"]:focus {
     justify-content: center;
     align-items: center;
     border: 2px solid #e1e2e2;
+    animation-name: pulse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 .checkmark:after {
@@ -237,10 +243,31 @@ input[type="password"]:focus {
     font-size: 90px;
     color: #fc8b33;
     color: green;
+    opacity: 1;
+    animation-name: fadeIn;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 
 .checkmark-p {
     color: #fff;
     text-align: center;
-    margin-top: 15px;
+    margin-top: 25px;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes fadeIn {
+    from {}
+
+    to {}
 }

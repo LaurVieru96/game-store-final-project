@@ -5,8 +5,8 @@ import filterSlice from "./filter-slice";
 
 const store = configureStore({
     reducer: {
-        favorites: favoritesSlice.reducer,
-        cart: cartSlice.reducer,
+        favorites: favoritesSlice,
+        cart: cartSlice,
         filter: filterSlice,
     }
 })

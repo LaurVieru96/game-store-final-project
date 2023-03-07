@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 import { cartActions } from "../../store/cart-Slice";
+import Footer from "../Footer/Footer";
 
 const Checkout = ({ user }) => {
   const cartItems = useSelector((state) => state.cart.cartList);
@@ -15,7 +16,7 @@ const Checkout = ({ user }) => {
   const increaseQuantity = () => {
     dispatch(cartActions.addToCart());
   };
-  const decreaseQuantity = () => {};
+  const decreaseQuantity = (id) => {};
 
   console.log(cartItems);
   const calculateTotal = () => {
@@ -93,6 +94,7 @@ const Checkout = ({ user }) => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
