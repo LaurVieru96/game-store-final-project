@@ -14,10 +14,13 @@ const options = {
 
 const GamesTable = () => {
   const [gamesList, setGamesList] = useState([]);
-  console.log(gamesList);
+  // console.log(gamesList);
 
   const filterPlatform = useSelector((state) => state.filter.platform);
-  console.log(filterPlatform);
+  // console.log(filterPlatform);
+
+  // const cartItems = useSelector((state) => state.cart.cartList);
+  // console.log(cartItems);
 
   // SEARCH
   // const [name, setName] = useState([]);
@@ -53,7 +56,7 @@ const GamesTable = () => {
       .map((item) => `platform=${item.toLowerCase()}`)
       .join("");
 
-    console.log(filterPlatform);
+    // console.log(filterPlatform);
 
     const response =
       filterPlatform === []
@@ -78,9 +81,9 @@ const GamesTable = () => {
   useEffect(() => {
     fetchData()
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         const filteredGames = res.filter((game) => game.worth !== "N/A");
-        console.log(filteredGames);
+        // console.log(filteredGames);
         setGamesList(filteredGames);
         // setGamesList(res);
       })

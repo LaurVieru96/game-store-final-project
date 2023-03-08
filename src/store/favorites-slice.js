@@ -12,7 +12,7 @@ const favoritesSlice = createSlice({
             const favoritesItems = action.payload;
             const existingItem = state.favoritesList.find((item) => item.id === favoritesItems.id);
             if (existingItem) {
-                console.log(`Added item successfully !`);
+                // console.log(`Added item successfully !`);
             } else {
                 state.favoritesList.push({
                     id: favoritesItems.id,
@@ -23,9 +23,9 @@ const favoritesSlice = createSlice({
         },
         removeFromFavorites(state, action) {
             const id = action.payload;
-            console.log(id)
+            // console.log(id);
             const index = state.favoritesList.findIndex((item) => item.id === id);
-            console.log(index)
+            // console.log(index);
             if (index !== -1) {
                 state.favoritesList.splice(index, 1);
             }

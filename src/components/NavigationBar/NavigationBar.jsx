@@ -44,17 +44,37 @@ const NavigationBar = ({ user }) => {
 
   const favoritesItems = useSelector((state) => state.favorites.favoritesList);
 
-  console.log(favoritesItems);
-
   const removeItem = (id) => {
     dispatch(favoritesActions.removeFromFavorites(id));
   };
 
   const cartItems = useSelector((state) => state.cart.cartList);
-  console.log(cartItems);
 
-  // const price = "$4.99";
-  // const number = parseFloat(price.replace("$", "")); // numar = 4.99
+  // const calculateIndividualTotal = () => {
+  //   let individualTotal = 0;
+  //   for (let i of cartItems) {
+  //     const prices = i.price.split("$").filter(Boolean);
+
+  //     const sum = prices.reduce((acc, price) => acc + parseFloat(price), 0);
+  //     individualTotal += sum;
+  //     return individualTotal.toFixed(2);
+  //   }
+  // };
+
+  // const totalIndividual = calculateIndividualTotal();
+
+  const calculateIndividualTotal = (cartItems) => {
+    let individualTotal = 0;
+    for (let item of cartItems) {
+      const prices = item.price.split("$").filter(Boolean);
+      const sum = prices.reduce((acc, price) => acc + parseFloat(price), 0);
+      individualTotal += sum;
+      console.log(`test 1 `);
+    }
+
+    return individualTotal.toFixed(2);
+  };
+  const totalIndividual = calculateIndividualTotal(cartItems);
 
   const calculateTotal = () => {
     let total = 0;
@@ -156,7 +176,8 @@ const NavigationBar = ({ user }) => {
                             />
                             {item.title}
                             <br />
-                            {item.price}
+                            {/* {item.price} */}
+                            {totalIndividual}
                             <button
                               onClick={() => removeFromCart(item.id)}
                               className="btn myBtn btn-warning"

@@ -17,9 +17,7 @@ const StoreFilter = () => {
     { id: "GOG", name: "GOG", isSelected: false },
   ]);
 
-  useEffect(() => {
-    console.log("Test actualizare componenta store filter", platforms);
-  }, [platforms]);
+  useEffect(() => {}, [platforms]);
 
   const handlePlatformSelection = (event) => {
     const platformId = event.target.id;
@@ -41,11 +39,11 @@ const StoreFilter = () => {
     });
 
     setPlatforms(newPlatforms);
-    console.log(updatedPlatforms);
+    // console.log(updatedPlatforms);
     const selectedPlatforms = newPlatforms
       .filter((p) => p.isSelected)
       .map((p) => p.id);
-    console.log(selectedPlatforms);
+    // console.log(selectedPlatforms);
     dispatch(filterActions.setPlatformFilter(selectedPlatforms));
   };
 
