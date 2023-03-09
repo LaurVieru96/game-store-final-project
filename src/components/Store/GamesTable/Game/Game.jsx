@@ -32,6 +32,7 @@ const Game = ({ game }) => {
         totalQuantity: 1,
         users: game.users,
         totalUsers: 1,
+        totalPrice: game.worth,
       })
     );
   };

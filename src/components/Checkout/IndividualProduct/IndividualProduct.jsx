@@ -13,10 +13,29 @@ const IndividualProduct = ({
   title,
   users,
   totalUsers,
+  totalPrice,
 }) => {
   const dispatch = useDispatch();
+  console.log("INDIVIDUAL PRODUCT", test);
+  console.log("totalPrice", totalPrice);
+
+  // const decreaseQuantity = () => {
+  //   dispatch(cartActions.removeQuantityFromCart(id));
+  // };
   const decreaseQuantity = () => {
-    dispatch(cartActions.removeQuantityFromCart(id));
+    dispatch(
+      cartActions.removeQuantityFromCart({
+        id,
+        title,
+        image,
+        price,
+        // price: test,
+        quantity,
+        users,
+        totalUsers,
+        totalPrice,
+      })
+    );
   };
   const increaseQuantity = () => {
     dispatch(
@@ -29,10 +48,10 @@ const IndividualProduct = ({
         quantity,
         users,
         totalUsers,
+        totalPrice,
       })
     );
   };
-  console.log("INDIVIDUAL PRODUCT", test);
 
   return (
     <Card>
@@ -52,7 +71,8 @@ const IndividualProduct = ({
               <div className="product-price">
                 <h5>
                   {/* ${test} <br /> */}
-                  {price} <br />
+                  {/* {price} <br /> */}
+                  {totalPrice}
                   {/* $ {(users / 1000).toFixed(2)} <br />${" "} */}
                   {/* {totalUsers} */}
                 </h5>

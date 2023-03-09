@@ -125,35 +125,13 @@ const Checkout = ({ user }) => {
   const calculateTotal = () => {
     let total = 0;
     for (let item of cartItems) {
-      const price = parseFloat(item.price.replace("$", ""));
+      const price = parseFloat(item.totalPrice.replace("$", ""));
       total += price;
     }
     return total.toFixed(2);
   };
   const totalPrice = calculateTotal();
   const totalPriceAfterTaxes = (Number(totalPrice) + 1.99).toFixed(2);
-
-  // const newPrice = () => {
-  //   // let total = 0;
-  //   const newArray = [...cartItems];
-  //   console.log(newArray);
-
-  //   const priceArray = newArray.map((obj) => obj.price);
-  //   console.log("Only price arr", priceArray);
-
-  //   const newOne = priceArray.map((e) => Number(e.split("$").filter(Boolean)));
-  //   // console.log(newOne);
-  //   return newOne;
-  // };
-  // const testPrice = newPrice();
-  // console.log(testPrice); // testPrice = [19.99, 1.99]
-
-  // console.log(gamesDB);
-
-  // const getPriceById = (id) => {
-  //   const game = gamesDB.find((item) => item.id === id);
-  //   return game ? game.worth : "";
-  // };
 
   return (
     <div className="checkout-container">
@@ -176,6 +154,7 @@ const Checkout = ({ user }) => {
                   title={item.title}
                   users={item.users}
                   totalUsers={item.totalUsers}
+                  totalPrice={item.totalPrice}
                 />
               ))}
             </div>
