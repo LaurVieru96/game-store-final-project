@@ -115,7 +115,7 @@ import { Link } from "react-router-dom";
 
 import Footer from "../Footer/Footer";
 import IndividualProduct from "./IndividualProduct/IndividualProduct";
-import { gamesDB } from "../../games-db.js";
+// import { gamesDB } from "../../games-db.js";
 
 const Checkout = ({ user }) => {
   const cartItems = useSelector((state) => state.cart.cartList);
@@ -149,10 +149,11 @@ const Checkout = ({ user }) => {
   // console.log(testPrice); // testPrice = [19.99, 1.99]
 
   // console.log(gamesDB);
-  const getPriceById = (id) => {
-    const game = gamesDB.find((item) => item.id === id);
-    return game ? game.worth : "";
-  };
+
+  // const getPriceById = (id) => {
+  //   const game = gamesDB.find((item) => item.id === id);
+  //   return game ? game.worth : "";
+  // };
 
   return (
     <div className="checkout-container">
@@ -169,7 +170,8 @@ const Checkout = ({ user }) => {
                   quantity={item.totalQuantity}
                   id={item.id}
                   // price={getPriceById(item.id)}
-                  test={getPriceById(item.id)}
+                  // test={getPriceById(item.id)}
+                  price={item.price}
                   image={item.image}
                   title={item.title}
                   users={item.users}

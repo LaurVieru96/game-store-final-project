@@ -7,7 +7,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 const IndividualProduct = ({
   quantity,
   id,
-  // price,
+  price,
   test,
   image,
   title,
@@ -24,7 +24,8 @@ const IndividualProduct = ({
         id,
         title,
         image,
-        price: test,
+        price,
+        // price: test,
         quantity,
         users,
         totalUsers,
@@ -50,7 +51,8 @@ const IndividualProduct = ({
               </div>
               <div className="product-price">
                 <h5>
-                  $ {test} <br />
+                  {/* ${test} <br /> */}
+                  {price} <br />
                   {/* $ {(users / 1000).toFixed(2)} <br />${" "} */}
                   {/* {totalUsers} */}
                 </h5>
