@@ -4,23 +4,35 @@ import { cartActions } from "../../../store/cart-Slice";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 
-const IndividualProduct = ({ quantity, id, price, image, title }) => {
+const IndividualProduct = ({
+  quantity,
+  id,
+  // price,
+  test,
+  image,
+  title,
+  users,
+  totalUsers,
+}) => {
   const dispatch = useDispatch();
   const decreaseQuantity = () => {
     dispatch(cartActions.removeQuantityFromCart(id));
   };
-
   const increaseQuantity = () => {
     dispatch(
       cartActions.addToCart({
         id,
         title,
         image,
-        price,
+        price: test,
         quantity,
+        users,
+        totalUsers,
       })
     );
   };
+  console.log("INDIVIDUAL PRODUCT", test);
+
   return (
     <Card>
       <ListGroup variant="flush">
@@ -37,7 +49,11 @@ const IndividualProduct = ({ quantity, id, price, image, title }) => {
                 <button onClick={increaseQuantity}>+</button>
               </div>
               <div className="product-price">
-                <h5>{price}</h5>
+                <h5>
+                  $ {test} <br />
+                  {/* $ {(users / 1000).toFixed(2)} <br />${" "} */}
+                  {/* {totalUsers} */}
+                </h5>
               </div>
             </div>
           </div>

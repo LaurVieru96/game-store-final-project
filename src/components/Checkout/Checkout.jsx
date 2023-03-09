@@ -115,11 +115,13 @@ import { Link } from "react-router-dom";
 
 import Footer from "../Footer/Footer";
 import IndividualProduct from "./IndividualProduct/IndividualProduct";
+import { gamesDB } from "../../games-db.js";
 
 const Checkout = ({ user }) => {
   const cartItems = useSelector((state) => state.cart.cartList);
 
-  console.log(cartItems);
+  // console.log(cartItems);
+
   const calculateTotal = () => {
     let total = 0;
     for (let item of cartItems) {
@@ -130,6 +132,27 @@ const Checkout = ({ user }) => {
   };
   const totalPrice = calculateTotal();
   const totalPriceAfterTaxes = (Number(totalPrice) + 1.99).toFixed(2);
+
+  // const newPrice = () => {
+  //   // let total = 0;
+  //   const newArray = [...cartItems];
+  //   console.log(newArray);
+
+  //   const priceArray = newArray.map((obj) => obj.price);
+  //   console.log("Only price arr", priceArray);
+
+  //   const newOne = priceArray.map((e) => Number(e.split("$").filter(Boolean)));
+  //   // console.log(newOne);
+  //   return newOne;
+  // };
+  // const testPrice = newPrice();
+  // console.log(testPrice); // testPrice = [19.99, 1.99]
+
+  // console.log(gamesDB);
+  const getPriceById = (id) => {
+    const game = gamesDB.find((item) => item.id === id);
+    return game ? game.worth : "";
+  };
 
   return (
     <div className="checkout-container">
@@ -145,9 +168,12 @@ const Checkout = ({ user }) => {
                   key={item.id}
                   quantity={item.totalQuantity}
                   id={item.id}
-                  price={totalPrice}
+                  // price={getPriceById(item.id)}
+                  test={getPriceById(item.id)}
                   image={item.image}
                   title={item.title}
+                  users={item.users}
+                  totalUsers={item.totalUsers}
                 />
               ))}
             </div>

@@ -1,4 +1,5 @@
 
+
 import { createSlice } from "@reduxjs/toolkit";
 
 
@@ -7,6 +8,7 @@ const cartSlice = createSlice({
     initialState: {
         cartList: [],
         totalQuantity: 0,
+        totalUsers: 1
     },
 
     reducers: {
@@ -15,13 +17,13 @@ const cartSlice = createSlice({
             const existingItem = state.cartList.find((item) => item.id === cartItems.id);
             if (existingItem) {
                 existingItem.totalQuantity++;
+                // console.log("price string", existingItem.price);
+                // let price = Number(existingItem.price.replace(/\$/g, ''));
 
-                // const prices = existingItem.price.split("$").filter(Boolean);
-                // const sum = prices.reduce((acc, price) => acc + parseFloat(price), 0);
-                // console.log(sum);
+                // price += Number(existingItem.price.replace(/\$/g, ''));
+                // console.log("price number", price);
 
-                existingItem.price += cartItems.price;
-
+                console.log("CART-SLICE", existingItem.test);
 
             } else {
                 state.cartList.push({
@@ -30,6 +32,8 @@ const cartSlice = createSlice({
                     image: cartItems.image,
                     price: cartItems.price,
                     totalQuantity: 1,
+                    users: cartItems.users,
+                    totalUsers: 1
                 })
             }
         },
@@ -47,23 +51,16 @@ const cartSlice = createSlice({
 
             const id = action.payload;
             const existingItem = state.cartList.find((item) => item.id === id);
-
+            console.log(existingItem)
             if (existingItem.totalQuantity === 1) {
                 state.cartList = state.cartList.filter((item) => item.id !== id);
                 console.log(existingItem.price)
                 console.log(existingItem.totalQuantity)
             } else {
                 existingItem.totalQuantity--;
-
-                // existingItem.price -= existingItem.price; // NaN string-number
-
-                // const str = existingItem.price;
-                // const nums = str.match(/\d+\.\d+/g).map(Number); // Extrage toate numerele din string și le transformă în numere reale
-                // const sum = nums.reduce((total, num) => total + num, 0); // Adună toate numerele
-                // console.log(sum);
-
-
-                // existingItem.price -= sum;
+                existingItem.users -= existingItem.users;
+                // existingItem.price -= existingItem.price;
+                // console.log(existingItem.price)
             }
         },
     }

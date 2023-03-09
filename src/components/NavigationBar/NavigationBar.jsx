@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import logo from "../../assets/logo3.png";
 import "./NavigationBar.css";
 import { AiOutlineShoppingCart } from "react-icons/ai";
@@ -17,6 +17,12 @@ import Badge from "react-bootstrap/Badge";
 
 const NavigationBar = ({ user }) => {
   const dispatch = useDispatch();
+  const removeItem = (id) => {
+    dispatch(favoritesActions.removeFromFavorites(id));
+  };
+  const removeFromCart = (id) => {
+    dispatch(cartActions.removeFromCart(id));
+  };
 
   const [show, setShow] = useState(false);
 
@@ -43,53 +49,31 @@ const NavigationBar = ({ user }) => {
     }, 300);
 
   const favoritesItems = useSelector((state) => state.favorites.favoritesList);
-
-  const removeItem = (id) => {
-    dispatch(favoritesActions.removeFromFavorites(id));
-  };
-
   const cartItems = useSelector((state) => state.cart.cartList);
 
-  // const calculateIndividualTotal = () => {
-  //   let individualTotal = 0;
-  //   for (let i of cartItems) {
-  //     const prices = i.price.split("$").filter(Boolean);
+  console.log("Cart Items", cartItems);
 
-  //     const sum = prices.reduce((acc, price) => acc + parseFloat(price), 0);
-  //     individualTotal += sum;
-  //     return individualTotal.toFixed(2);
-  //   }
+  const dropdownCartTotal = useRef(0);
+  const calculateIndividualTotal = () => {
+    const total = cartItems.reduce((acc, price) => {
+      const prices = price.price.split("$");
+      return acc + Number(prices[1]);
+    }, 0);
+
+    dropdownCartTotal.current = total;
+  };
+  calculateIndividualTotal();
+
+  // const individualQuantityTotal = useRef(0);
+
+  // const calcIndQuanTotal = () => {
+  //   const total = cartItems.reduce((acc, item) => {
+  //     return acc + parseFloat(item.price.slice(1));
+  //   }, 0);
+  //   individualQuantityTotal.current = total;
   // };
 
-  // const totalIndividual = calculateIndividualTotal();
-
-  const calculateIndividualTotal = (cartItems) => {
-    let individualTotal = 0;
-    for (let item of cartItems) {
-      const prices = item.price.split("$").filter(Boolean);
-      const sum = prices.reduce((acc, price) => acc + parseFloat(price), 0);
-      individualTotal += sum;
-      console.log(`test 1 `);
-    }
-
-    return individualTotal.toFixed(2);
-  };
-  const totalIndividual = calculateIndividualTotal(cartItems);
-
-  const calculateTotal = () => {
-    let total = 0;
-    for (let item of cartItems) {
-      const price = parseFloat(item.price.replace("$", ""));
-      total += price;
-    }
-    return total.toFixed(2);
-  };
-
-  const totalPrice = calculateTotal();
-
-  const removeFromCart = (id) => {
-    dispatch(cartActions.removeFromCart(id));
-  };
+  // calcIndQuanTotal();
 
   return (
     <div className="navigation-container">
@@ -176,8 +160,8 @@ const NavigationBar = ({ user }) => {
                             />
                             {item.title}
                             <br />
-                            {/* {item.price} */}
-                            {totalIndividual}
+                            {item.price}
+                            {/* {individualQuantityTotal.current.toFixed(2)} */}
                             <button
                               onClick={() => removeFromCart(item.id)}
                               className="btn myBtn btn-warning"
@@ -194,7 +178,8 @@ const NavigationBar = ({ user }) => {
                 </div>
               </Modal.Body>
               <Modal.Body style={{ color: "#fc8b33" }}>
-                Total Price: <b>$ {totalPrice}</b>
+                Total Price: <b>$ {dropdownCartTotal.current.toFixed(2)}</b>
+                {/* Total Price: <b>$ {totalPrice}</b> */}
               </Modal.Body>
               <Modal.Body style={{ color: "#fc8b33" }}>
                 Cart and payment.
