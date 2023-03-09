@@ -61,14 +61,19 @@ const cartSlice = createSlice({
         removeQuantityFromCart(state, action) {
             const cartItem = action.payload;
             const existingItemIndex = state.cartList.findIndex((item) => item.id === cartItem.id);
+
             if (existingItemIndex !== -1) {
                 const existingItem = state.cartList[existingItemIndex];
                 const existingItemPrice = Number(existingItem.totalPrice.replace("$", ""));
                 const cartItemPrice = Number(cartItem.price.replace("$", ""));
                 const updatedTotalQuantity = existingItem.totalQuantity - 1;
-                console.log("(existingItemPrice - cartItemPrice).toFixed(2)", (existingItemPrice - cartItemPrice).toFixed(2))
+
+                console.log("(existingItemPrice - cartItemPrice).toFixed(2)", (existingItemPrice - cartItemPrice).toFixed(2));
+
                 const updatedPrice = (existingItemPrice - cartItemPrice).toFixed(2);
+
                 console.log("updatedPrice", updatedPrice);
+
                 const updatedCartItem = {
                     ...existingItem,
                     totalQuantity: updatedTotalQuantity,
@@ -76,8 +81,15 @@ const cartSlice = createSlice({
                     // totalPrice: `$${updatedPrice}`,
                     totalPrice: `$${updatedPrice}`,
                 };
+
                 const updatedCartList = [...state.cartList];
                 updatedCartList[existingItemIndex] = updatedCartItem;
+                // ======================== TEST    
+                if (updatedTotalQuantity === 0) {
+                    updatedCartList.splice(existingItemIndex, 1);
+                }
+                // ======================== TEST
+
                 return {
                     ...state,
                     cartList: updatedCartList,
