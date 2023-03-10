@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { cartActions } from "../../../store/cart-Slice";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
+import "./IndividualProduct.css";
 
 const IndividualProduct = ({
   quantity,

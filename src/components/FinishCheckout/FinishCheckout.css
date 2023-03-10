@@ -455,3 +455,30 @@ input[type="password"]:focus {
 
 
 /* ========================TEST */
+
+
+
+
+
+/* MEDIA TEST  */
+
+@media (max-width: 1000px) {
+
+    .card-wrapper {
+        flex-direction: column;
+    }
+
+    .left-container {
+        margin-top: 15px;
+    }
+
+    .card-main {
+        display: none;
+    }
+
+    .card-form {
+        margin-bottom: 10px;
+    }
+}
+
+/* MEDIA TEST  */

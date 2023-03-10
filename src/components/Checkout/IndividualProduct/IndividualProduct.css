@@ -1,0 +1,9 @@
+@media (max-width: 1000px) {
+    .product-info img {
+        width: 75px !important;
+    }
+
+    .product-info h5 {
+        font-size: 15px;
+    }
+}
