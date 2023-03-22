@@ -1,0 +1,23 @@
+.gamesTable-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.gamesTable-container input {
+    color: #E1E2E2;
+    background-color: #1D2228;
+    border: none;
+    padding: 7px;
+    letter-spacing: 1px;
+    width: 70%;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.gamesTable-container input::placeholder {
+    color: #E1E2E2;
+    background-color: #1D2228;
+    letter-spacing: 1px;
+    padding: 5px;
+    cursor: pointer;
+}
